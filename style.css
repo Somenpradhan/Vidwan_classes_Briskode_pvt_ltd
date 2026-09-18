@@ -359,21 +359,19 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.75rem;
 }
 
-.client-logo-badge {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 18px rgba(37, 99, 235, 0.45);
+.client-original-logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(254, 225, 0, 0.35);
     transition: var(--transition);
 }
 
-.client-logo-badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 22px rgba(59, 130, 246, 0.6);
+.client-original-logo-img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 20px rgba(254, 225, 0, 0.55);
 }
 
 .client-logo-v {
