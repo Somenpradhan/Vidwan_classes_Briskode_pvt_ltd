@@ -90,8 +90,84 @@
                     <i class="ri-menu-3-line"></i>
                 </button>
             </div>
-        </div>
     </nav>
+
+    <!-- Photo Banner Scrolling Carousel (Right after Navigation Toolbar) -->
+    <section class="banner-slider-section" id="bannerSlider">
+        <div class="container">
+            <div class="banner-slider-container">
+                <div class="banner-track" id="bannerTrack">
+                    <!-- Slide 1: JEE Toppers & Selection Rate Banner -->
+                    <div class="banner-slide">
+                        <img src="assets/jee_toppers_banner.png" alt="JEE Advanced Toppers & 73% Selection Rate" loading="eager">
+                        <div class="banner-caption-overlay">
+                            <span class="banner-badge gold-badge"><i class="ri-trophy-fill"></i> JEE ADVANCED RESULTS</span>
+                            <h2>73% Selection Rate in JEE Advanced</h2>
+                            <p>Top Ranks AIR 286, AIR 694, AIR 984, AIR 948, AIR 989, AIR 4476</p>
+                            <button class="btn btn-primary btn-sm glow-btn" onclick="openModal('applyModal')">
+                                <i class="ri-fire-fill"></i> Join Top Rankers Batch
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: VST Scholarship 90% Banner -->
+                    <div class="banner-slide">
+                        <img src="assets/vst_scholarship_banner.png" alt="VST 2026 Up to 90% Scholarship Test" loading="lazy">
+                        <div class="banner-caption-overlay">
+                            <span class="banner-badge cyan-badge"><i class="ri-flashlight-fill"></i> ADMISSIONS 2026-27</span>
+                            <h2>Vidwan Talent Search Test (VST 2026)</h2>
+                            <p>Avail Up to 90% Scholarship & Cash Rewards for Class 6th to 12th</p>
+                            <button class="btn btn-gold btn-sm" onclick="openVSTModal()">
+                                <i class="ri-award-line"></i> Register for VST Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Path to Success Hero Banner -->
+                    <div class="banner-slide">
+                        <img src="assets/hero_banner.png" alt="Vidwan Classes Path to Excellence" loading="lazy">
+                        <div class="banner-caption-overlay">
+                            <span class="banner-badge blue-badge"><i class="ri-sparkles-fill"></i> ACADEMIC EXCELLENCE</span>
+                            <h2>Path to Success & Rank 1 Guidance</h2>
+                            <p>Mentored by 100% IITian & AIIMS Doctor Faculty Team</p>
+                            <a href="#courses" class="btn btn-outline btn-sm">
+                                <i class="ri-book-open-line"></i> Explore Courses
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Modern Campus & Digital Labs -->
+                    <div class="banner-slide">
+                        <img src="assets/campus.png" alt="Vidwan Classes State-of-the-Art Campus" loading="lazy">
+                        <div class="banner-caption-overlay">
+                            <span class="banner-badge emerald-badge"><i class="ri-building-4-fill"></i> WORLD-CLASS INFRASTRUCTURE</span>
+                            <h2>Smart Classrooms & Computer CBT Labs</h2>
+                            <p>District Centre, C.S. Pur, Bhubaneswar Centre</p>
+                            <button class="btn btn-secondary btn-sm" onclick="openModal('callbackModal')">
+                                <i class="ri-map-pin-user-line"></i> Visit Campus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button class="slider-arrow slider-prev" id="sliderPrev" aria-label="Previous Slide">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="slider-arrow slider-next" id="sliderNext" aria-label="Next Slide">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+
+                <!-- Dots Pagination -->
+                <div class="slider-dots" id="sliderDots">
+                    <span class="dot-indicator active" onclick="goToSlide(0)"></span>
+                    <span class="dot-indicator" onclick="goToSlide(1)"></span>
+                    <span class="dot-indicator" onclick="goToSlide(2)"></span>
+                    <span class="dot-indicator" onclick="goToSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero">

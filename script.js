@@ -4,12 +4,87 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+    initBannerSlider();
     initCounters();
     initCourseFilter();
     initResultFilter();
     initCountdown();
     initModals();
 });
+
+/* 0. Photo Banner Scrolling Slider */
+let currentSlide = 0;
+let sliderInterval = null;
+
+function initBannerSlider() {
+    const track = document.getElementById('bannerTrack');
+    const slides = document.querySelectorAll('.banner-slide');
+    const dots = document.querySelectorAll('.dot-indicator');
+    const prevBtn = document.getElementById('sliderPrev');
+    const nextBtn = document.getElementById('sliderNext');
+    const container = document.querySelector('.banner-slider-container');
+
+    if (!track || slides.length === 0) return;
+
+    function updateSlider(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        dots.forEach((dot, i) => {
+            if (i === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    window.goToSlide = (i) => {
+        updateSlider(i);
+        restartAutoPlay();
+    };
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            updateSlider(currentSlide - 1);
+            restartAutoPlay();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            updateSlider(currentSlide + 1);
+            restartAutoPlay();
+        });
+    }
+
+    function startAutoPlay() {
+        if (!sliderInterval) {
+            sliderInterval = setInterval(() => {
+                updateSlider(currentSlide + 1);
+            }, 3500);
+        }
+    }
+
+    function stopAutoPlay() {
+        if (sliderInterval) {
+            clearInterval(sliderInterval);
+            sliderInterval = null;
+        }
+    }
+
+    function restartAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    if (container) {
+        container.addEventListener('mouseenter', stopAutoPlay);
+        container.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    startAutoPlay();
+}
 
 /* 1. Sticky Navigation & Mobile Toggle */
 function initNavigation() {

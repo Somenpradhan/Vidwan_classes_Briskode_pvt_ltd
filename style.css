@@ -479,6 +479,177 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
+/* Photo Banner Scrolling Carousel (Right after Navigation Toolbar) */
+.banner-slider-section {
+    padding: 1.75rem 0 0.75rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.banner-slider-container {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg), 0 0 35px rgba(67, 97, 238, 0.25);
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    aspect-ratio: 21 / 8;
+    max-height: 480px;
+    min-height: 260px;
+}
+
+.banner-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.banner-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s ease;
+}
+
+.banner-slide:hover img {
+    transform: scale(1.03);
+}
+
+.banner-caption-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.25rem 2.5rem 1.75rem 2.5rem;
+    background: linear-gradient(0deg, rgba(4, 8, 20, 0.95) 0%, rgba(4, 8, 20, 0.65) 65%, transparent 100%);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    z-index: 2;
+}
+
+.banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gold-badge { background: rgba(255, 183, 3, 0.2); color: var(--gold); border: 1px solid rgba(255, 183, 3, 0.4); }
+.cyan-badge { background: rgba(76, 201, 240, 0.2); color: var(--cyan-glow); border: 1px solid rgba(76, 201, 240, 0.4); }
+.blue-badge { background: rgba(67, 97, 238, 0.2); color: #818cf8; border: 1px solid rgba(67, 97, 238, 0.4); }
+.emerald-badge { background: rgba(6, 214, 160, 0.2); color: var(--emerald); border: 1px solid rgba(6, 214, 160, 0.4); }
+
+.banner-caption-overlay h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.banner-caption-overlay p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: var(--transition);
+}
+
+.slider-arrow:hover {
+    background: var(--electric-blue);
+    border-color: var(--cyan-glow);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(67, 97, 238, 0.6);
+}
+
+.slider-prev { left: 1.25rem; }
+.slider-next { right: 1.25rem; }
+
+/* Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 2.25rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 5;
+}
+
+.dot-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dot-indicator.active {
+    background: var(--gold);
+    width: 28px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+    .banner-slider-container {
+        aspect-ratio: 16 / 9;
+        max-height: 280px;
+    }
+    .banner-caption-overlay h2 {
+        font-size: 1.15rem;
+    }
+    .banner-caption-overlay p {
+        display: none;
+    }
+    .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    .slider-prev { left: 0.5rem; }
+    .slider-next { right: 0.5rem; }
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
