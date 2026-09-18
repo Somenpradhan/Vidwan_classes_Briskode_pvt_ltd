@@ -350,27 +350,33 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 75px;
+    height: 86px;
 }
 
 .brand-logo {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    position: relative;
+    z-index: 15;
 }
 
 .client-original-logo-img {
-    height: 54px;
+    height: 64px;
     width: auto;
-    max-width: 250px;
+    max-width: 280px;
     object-fit: contain;
-    filter: drop-shadow(0 4px 14px rgba(67, 97, 238, 0.45));
-    transition: var(--transition);
+    border-radius: 8px;
+    border: 1.5px solid rgba(254, 225, 0, 0.45);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 22px rgba(254, 225, 0, 0.35);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    cursor: pointer;
 }
 
 .client-original-logo-img:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 6px 20px rgba(76, 201, 240, 0.7));
+    transform: scale(1.14) translateY(-2px);
+    border-color: #FEE100;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 35px rgba(254, 225, 0, 0.9);
 }
 
 .client-logo-v {
