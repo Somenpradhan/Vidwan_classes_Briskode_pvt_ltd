@@ -360,18 +360,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .client-original-logo-img {
-    height: 48px;
+    height: 54px;
     width: auto;
-    max-width: 220px;
+    max-width: 250px;
     object-fit: contain;
-    border-radius: 6px;
-    box-shadow: 0 4px 16px rgba(254, 225, 0, 0.35);
+    filter: drop-shadow(0 4px 14px rgba(67, 97, 238, 0.45));
     transition: var(--transition);
 }
 
 .client-original-logo-img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 6px 20px rgba(254, 225, 0, 0.55);
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 20px rgba(76, 201, 240, 0.7));
 }
 
 .client-logo-v {
