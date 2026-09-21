@@ -354,10 +354,10 @@ h1, h2, h3, h4, h5, h6 {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 76px;
-    gap: 1rem;
-    max-width: 1380px;
+    justify-content: flex-start;
+    height: 84px;
+    gap: 1.25rem;
+    max-width: 1400px;
 }
 
 .brand-logo {
@@ -368,26 +368,26 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     text-decoration: none;
     flex-shrink: 0;
-    margin-right: 0.75rem;
+    margin-right: 1.25rem;
 }
 
 .client-original-logo-img {
-    height: 44px;
+    height: 54px;
     width: auto;
-    max-width: 210px;
+    max-width: 250px;
     object-fit: contain;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 230, 23, 0.4);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 9px;
+    border: 1.5px solid #FFE617;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 16px rgba(255, 230, 23, 0.35);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
     display: block;
 }
 
 .client-original-logo-img:hover {
-    transform: translateY(-1px) scale(1.02);
-    border-color: #FFE617;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px) scale(1.03);
+    border-color: #FFFFFF;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 230, 23, 0.6);
 }
 
 .footer-logo-img {
@@ -523,6 +523,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 0.65rem;
     flex-shrink: 0;
+    margin-left: auto;
 }
 
 .nav-actions .btn {
