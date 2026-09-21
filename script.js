@@ -817,8 +817,100 @@ function initCourseDetailsPage() {
                         <i class="ri-customer-service-2-line"></i> Speak To Program Director
                     </button>
                 </div>
-            </div>
-        </div>
     `;
 }
+
+/* 13. Gallery Page Interactive Engine */
+function openLightbox(imgSrc, captionText) {
+    const modal = document.getElementById('galleryLightbox');
+    const img = document.getElementById('lightboxImg');
+    const caption = document.getElementById('lightboxCaption');
+    if (!modal || !img || !caption) return;
+
+    img.src = imgSrc;
+    caption.textContent = captionText;
+    modal.classList.add('active');
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('galleryLightbox');
+    if (modal) modal.classList.remove('active');
+}
+
+function filterGallery(category, buttonEl) {
+    const filterBtns = document.querySelectorAll('#experienceFilter .filter-btn');
+    filterBtns.forEach(btn => btn.classList.remove('active'));
+    if (buttonEl) buttonEl.classList.add('active');
+
+    const items = document.querySelectorAll('#experienceGrid .gallery-item');
+    items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+/* Testimonial Slider Engine */
+let currentTestimonialIndex = 0;
+
+function updateTestimonialSlider(index) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.t-dot');
+    if (slides.length === 0) return;
+
+    currentTestimonialIndex = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+        if (i === currentTestimonialIndex) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+
+    dots.forEach((dot, i) => {
+        if (i === currentTestimonialIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+function nextTestimonial() {
+    updateTestimonialSlider(currentTestimonialIndex + 1);
+}
+
+function prevTestimonial() {
+    updateTestimonialSlider(currentTestimonialIndex - 1);
+}
+
+function goToTestimonial(index) {
+    updateTestimonialSlider(index);
+}
+
+/* Student Photo Gallery Carousel Engine */
+let studentCarouselPosition = 0;
+
+function scrollStudentCarousel(direction) {
+    const track = document.getElementById('studentCarouselTrack');
+    if (!track) return;
+
+    const cards = track.querySelectorAll('.student-card-item');
+    if (cards.length === 0) return;
+
+    const cardWidth = cards[0].offsetWidth + 24; // Width + gap
+    const maxScroll = (cards.length - 4) * cardWidth;
+
+    studentCarouselPosition += direction * cardWidth;
+
+    if (studentCarouselPosition < 0) studentCarouselPosition = 0;
+    if (studentCarouselPosition > maxScroll && maxScroll > 0) studentCarouselPosition = maxScroll;
+
+    track.style.transform = `translateX(-${studentCarouselPosition}px)`;
+}
+
 

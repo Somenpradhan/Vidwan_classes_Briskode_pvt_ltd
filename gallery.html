@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Student Showcase | Vidwan Classes</title>
+    <meta name="description" content="Explore Vidwan Classes experience gallery, student testimonials, and our star rankers photo gallery in IIT-JEE and NEET.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <div class="announcement-tag"><i class="ri-flashlight-fill"></i> ADMISSIONS OPEN 2026-27</div>
+            <div class="announcement-text">
+                Vidwan Talent Search Test (VST) 2026 Registration is now LIVE! Avail up to <strong>90% Scholarship</strong>.
+            </div>
+            <a href="vst.html" class="announcement-link">Register Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+    </div>
+
+    <!-- Header Utility Bar -->
+    <header class="utility-bar">
+        <div class="container utility-container">
+            <div class="utility-left">
+                <a href="tel:+919777440451"><i class="ri-phone-fill"></i> +91-9777440451 / 465</a>
+                <a href="mailto:info@vidwanclasses.com"><i class="ri-mail-fill"></i> info@vidwanclasses.com</a>
+                <span class="utility-loc"><i class="ri-map-pin-2-fill"></i> District Centre, C.S. Pur, Bhubaneswar</span>
+            </div>
+            <div class="utility-right">
+                <a href="about.html">Our Management</a>
+                <span class="dot">•</span>
+                <a href="faculty.html">Faculty Team</a>
+                <span class="dot">•</span>
+                <a href="vst.html">Scholarships</a>
+                <span class="dot">•</span>
+                <button class="btn-text-link" onclick="openModal('callbackModal')"><i class="ri-customer-service-2-line"></i> Request Callback</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" title="Vidwan Classes Official Logo">
+                <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img">
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="courses.html" class="nav-link dropdown-toggle">Courses <i class="ri-chevron-down-s-line"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="course-details.html?id=nurture"><i class="ri-compass-3-line"></i> Nurture (Class XI)</a>
+                        <a href="course-details.html?id=qualifier"><i class="ri-heart-pulse-line"></i> Qualifier (Class XII)</a>
+                        <a href="course-details.html?id=target"><i class="ri-trophy-line"></i> Target (Droppers)</a>
+                        <a href="course-details.html?id=prefoundation"><i class="ri-honour-line"></i> Pre-Foundation</a>
+                        <a href="course-details.html?id=digiconnect"><i class="ri-laptop-line"></i> Digi-Connect Online</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="faculty.html" class="nav-link">Faculty</a>
+                <a href="results.html" class="nav-link">Our Success</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="vst.html" class="nav-link">Scholarship (VST)</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="openBrochureBtn">
+                    <i class="ri-file-download-line"></i> Syllabus
+                </button>
+                <button class="btn btn-primary glow-btn" onclick="openModal('applyModal')">
+                    <i class="ri-edit-box-line"></i> Apply Now
+                </button>
+                <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="breadcrumb-trail">
+                <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span>Gallery & Student Showcase</span>
+            </div>
+            <h1 class="page-banner-title">Vidwan <span class="text-gradient">Gallery</span></h1>
+            <p class="page-banner-subtitle">Explore classroom experiences, authentic student testimonials, and our star rankers photo gallery.</p>
+            
+            <!-- In-Page Quick Section Jump Tabs -->
+            <div class="gallery-subnav">
+                <a href="#experience" class="gallery-tab-btn active"><i class="ri-image-line"></i> Experience</a>
+                <a href="#student-reviews" class="gallery-tab-btn"><i class="ri-chat-quote-line"></i> Student Reviews</a>
+                <a href="#our-students" class="gallery-tab-btn"><i class="ri-team-line"></i> Our Students</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 1: EXPERIENCE GALLERY
+       ========================================================================== -->
+    <section class="section-padding" id="experience" style="padding-top: 1rem;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">— LIFE AT VIDWAN —</span>
+                <h2 class="section-title">Experience <span class="text-gradient">Gallery</span></h2>
+                <p class="section-desc">Snapshots of classroom moments, historical JEE Advanced toppers banners, state-of-the-art CBT computer labs, and celebrations.</p>
+                
+                <div class="filter-tabs margin-top-1" id="experienceFilter">
+                    <button class="filter-btn active" onclick="filterGallery('all', this)">All Photos</button>
+                    <button class="filter-btn" onclick="filterGallery('toppers', this)">Toppers & Banners</button>
+                    <button class="filter-btn" onclick="filterGallery('campus', this)">Campus & Labs</button>
+                    <button class="filter-btn" onclick="filterGallery('classroom', this)">Classroom & Seminars</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="experienceGrid">
+                <!-- Banner 1: JEE Advanced 2017 -->
+                <div class="gallery-item" data-category="toppers" onclick="openLightbox('assets/exp_jee_2017.jpg', 'JEE Advanced 2017 - 98 Total Selections | Top Ranks in IIT Kharagpur, IIT Delhi, IIT Kanpur, IIT Bombay')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/exp_jee_2017.jpg" alt="JEE Advanced 2017 Selections Banner" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">JEE ADVANCED 2017</span>
+                            <h3>98 Total Selections in IITs</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner 2: JEE Advanced 2014 -->
+                <div class="gallery-item" data-category="toppers" onclick="openLightbox('assets/exp_jee_2014.jpg', 'JEE Advanced 2014 - 270 Selections | State Toppers Sattwik Dev Mishra (AIR 131) & Debarnab Mitra (AIR 168) in IIT Bombay')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/exp_jee_2014.jpg" alt="JEE Advanced 2014 Selections Banner" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">JEE ADVANCED 2014</span>
+                            <h3>270 Selections | State Toppers AIR 131 & 168</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner 3: JEE Advanced 2015 -->
+                <div class="gallery-item" data-category="toppers" onclick="openLightbox('assets/exp_jee_2015.jpg', 'JEE Advanced 2015 - 66 Selections | Vineet Ekka (IIT Kharagpur) & Shobhna Misra (IIT Bombay)')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/exp_jee_2015.jpg" alt="JEE Advanced 2015 Selections Banner" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">JEE ADVANCED 2015</span>
+                            <h3>66 Selections | Vineet Ekka & Shobhna Misra</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner 4: JEE Advanced 2016 -->
+                <div class="gallery-item" data-category="toppers" onclick="openLightbox('assets/exp_jee_2016.jpg', 'JEE Advanced 2016 - 112 Selections out of 242 | Rukmangadh Sai (IIT Bombay CS), Satyaprajna S. Sahoo (IIT Bombay Chemical)')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/exp_jee_2016.jpg" alt="JEE Advanced 2016 Selections Banner" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">JEE ADVANCED 2016</span>
+                            <h3>112 Selections out of 242 Students</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner 5: JEE Advanced 2018 -->
+                <div class="gallery-item" data-category="toppers" onclick="openLightbox('assets/exp_jee_2018.jpg', 'JEE Advanced 2018 - 113 Selections | B. Smayan Das, Ashish, Krishna (IIT Kharagpur Computer Science)')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/exp_jee_2018.jpg" alt="JEE Advanced 2018 Selections Banner" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">JEE ADVANCED 2018</span>
+                            <h3>113 Selections | B. Smayan Das (IIT Kharagpur CS)</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 6: World-Class Campus -->
+                <div class="gallery-item" data-category="campus" onclick="openLightbox('assets/campus.png', 'Vidwan Classes Modern Campus Infrastructure in Chandrasekharpur, Bhubaneswar')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/campus.png" alt="Vidwan Classes Bhubaneswar Campus" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">CAMPUS & INFRASTRUCTURE</span>
+                            <h3>Modern Academic Building & CBT Labs</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 7: Path to Success Banner -->
+                <div class="gallery-item" data-category="classroom" onclick="openLightbox('assets/hero_banner.png', 'Academic Excellence & Mentorship by 100% IITian & AIIMS Doctor Faculty Team')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/hero_banner.png" alt="Vidwan Classes Path to Success Mentorship" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">MENTORSHIP & CLASSROOMS</span>
+                            <h3>Path to Rank 1 & Academic Excellence</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 8: JEE Toppers Banner -->
+                <div class="gallery-item" data-category="toppers" onclick="openLightbox('assets/jee_toppers_banner.png', 'JEE Advanced Outstanding Selections - AIR 286, AIR 694, AIR 948, AIR 989, AIR 4476')">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/jee_toppers_banner.png" alt="JEE Toppers Outstanding Selections" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">HALL OF FAME 2025</span>
+                            <h3>AIR 286, 694, 948, 989 Rankers</h3>
+                            <p><i class="ri-zoom-in-line"></i> Click to enlarge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 2: HAPPY STUDENTS SAY (Testimonials Slider)
+       ========================================================================== -->
+    <section class="section-padding happy-students-section" id="student-reviews">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">— STUDENT FEEDBACK & TESTIMONIALS —</span>
+                <h2 class="section-title">Our <span class="text-gradient">Happy Students</span> Say</h2>
+                <p class="section-desc">Authentic student notes, ranker letters, and heart-felt reviews from our Vidwanites.</p>
+            </div>
+
+            <!-- Custom Testimonial Banner Unit Inspired by Reference Image 3 -->
+            <div class="happy-testimonial-banner glass-panel">
+                <div class="testimonial-slider-wrapper">
+                    <!-- Slider Container -->
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <!-- Testimonial Slide 1 -->
+                        <div class="testimonial-slide active">
+                            <div class="handwritten-card-wrapper">
+                                <div class="handwritten-paper">
+                                    <div class="paper-header">
+                                        <i class="ri-double-quotes-l quote-mark"></i>
+                                        <span class="air-badge">AIR 596 in JEE (Advanced)</span>
+                                    </div>
+                                    <p class="handwritten-text">
+                                        "First of all, I would like to thank the Almighty, my parents, relatives and others. But most of all I would thank the staff of Vidwan Classes. It was only because of their support, guidance and incessant perseverance that I was able to get an All India Rank 596 in JEE (Advanced). I was a student of Vidwan's two years classroom program. In these two years my teachers helped me build my confidence gradually and helped me crack JEE Advanced. Two years ago I joined Vidwan because I had heard it was best in Odisha, now I believe it! Truly a Vidwanite today is an IITian tomorrow."
+                                    </p>
+                                    <div class="paper-signature">
+                                        <h4>Akash Kumar Panda</h4>
+                                        <p>AIR 596 — JEE (Advanced)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Slide 2 -->
+                        <div class="testimonial-slide">
+                            <div class="handwritten-card-wrapper">
+                                <div class="handwritten-paper">
+                                    <div class="paper-header">
+                                        <i class="ri-double-quotes-l quote-mark"></i>
+                                        <span class="air-badge">AIR 286 in JEE (Advanced)</span>
+                                    </div>
+                                    <p class="handwritten-text">
+                                        "Vidwan's daily doubt clearing desks and All India Test Series (AITS) were pivotal to my success! The faculty members were accessible even after regular class hours to solve complex multi-concept questions in Physics and Mathematics."
+                                    </p>
+                                    <div class="paper-signature">
+                                        <h4>Saswat Kumar Malla</h4>
+                                        <p>IIT Kharagpur (CSE) — AIR 286</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Slide 3 -->
+                        <div class="testimonial-slide">
+                            <div class="handwritten-card-wrapper">
+                                <div class="handwritten-paper">
+                                    <div class="paper-header">
+                                        <i class="ri-double-quotes-l quote-mark"></i>
+                                        <span class="air-badge medical-badge">AIR 142 in NEET UG</span>
+                                    </div>
+                                    <p class="handwritten-text">"The NCERT line-by-line Biology drills and periodic CBT mock tests at Vidwan made NEET Biology effortless. The 1-on-1 Doctor faculty guidance gave me the exact strategy needed for AIIMS New Delhi."</p>
+                                    <div class="paper-signature">
+                                        <h4>Naveen Sai</h4>
+                                        <p>AIIMS New Delhi — AIR 142</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide Controls -->
+                    <div class="t-controls-row">
+                        <button class="t-arrow-btn" onclick="prevTestimonial()"><i class="ri-arrow-left-s-line"></i></button>
+                        <div class="t-dots-container" id="tDots">
+                            <span class="t-dot active" onclick="goToTestimonial(0)"></span>
+                            <span class="t-dot" onclick="goToTestimonial(1)"></span>
+                            <span class="t-dot" onclick="goToTestimonial(2)"></span>
+                        </div>
+                        <button class="t-arrow-btn" onclick="nextTestimonial()"><i class="ri-arrow-right-s-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 3: OUR STUDENTS / PHOTO GALLERY (Inspired by Ref Images 1 & 2)
+       ========================================================================== -->
+    <section class="section-padding our-students-section" id="our-students">
+        <div class="container">
+            <div class="students-header-row">
+                <div class="students-title-unit">
+                    <span class="sub-heading">— OUR STUDENTS —</span>
+                    <h2 class="section-title">Photo <span class="text-gradient">Gallery</span></h2>
+                </div>
+
+                <!-- Right Aligned Arrow Controls matching Reference Image 2 -->
+                <div class="student-carousel-controls">
+                    <button class="sc-arrow-btn" onclick="scrollStudentCarousel(-1)"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="sc-arrow-btn" onclick="scrollStudentCarousel(1)"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+
+            <!-- Student Photo Carousel Track -->
+            <div class="students-carousel-wrapper">
+                <div class="students-carousel-track" id="studentCarouselTrack">
+
+                    <!-- SELECTION SUMMARY CARD (Inspired by Reference Image 1) -->
+                    <div class="student-card-item selection-summary-box">
+                        <div class="sel-tag">JEE ADVANCED 2025 RESULT</div>
+                        <div class="sel-count-unit">
+                            <span class="sel-lbl">Total Selections</span>
+                            <span class="sel-big-num">73%</span>
+                            <span class="sel-sub-txt">Selection Rate</span>
+                        </div>
+                        <ul class="sel-ranks-list">
+                            <li><i class="ri-trophy-fill" style="color: var(--gold);"></i> <strong>AIR 286</strong> — IIT Kharagpur (CSE)</li>
+                            <li><i class="ri-trophy-fill" style="color: var(--gold);"></i> <strong>AIR 694</strong> — IIT Bhubaneswar (ECE)</li>
+                            <li><i class="ri-trophy-fill" style="color: var(--gold);"></i> <strong>AIR 948</strong> — IIT Madras</li>
+                            <li><i class="ri-trophy-fill" style="color: var(--gold);"></i> <strong>AIR 989</strong> — IIT Kanpur</li>
+                            <li><i class="ri-trophy-fill" style="color: var(--gold);"></i> <strong>AIR 4476</strong> — IIT Kharagpur</li>
+                        </ul>
+                    </div>
+
+                    <!-- Student 1: Chirag Ghosh -->
+                    <div class="student-card-item">
+                        <div class="student-photo-frame">
+                            <div class="suit-avatar">CG</div>
+                        </div>
+                        <div class="student-meta">
+                            <h4 class="st-name">CHIRAG GHOSH</h4>
+                            <p class="st-college">IIT-KHARAGPUR</p>
+                            <p class="st-branch">COMPUTER SCIENCE</p>
+                        </div>
+                    </div>
+
+                    <!-- Student 2: Sourabh S. Das -->
+                    <div class="student-card-item">
+                        <div class="student-photo-frame">
+                            <div class="suit-avatar">SD</div>
+                        </div>
+                        <div class="student-meta">
+                            <h4 class="st-name">SOURABH S. DAS</h4>
+                            <p class="st-college">IIT-KHARAGPUR</p>
+                            <p class="st-branch">COMPUTER SCIENCE</p>
+                        </div>
+                    </div>
+
+                    <!-- Student 3: Sthiti P. Sahoo -->
+                    <div class="student-card-item">
+                        <div class="student-photo-frame">
+                            <div class="suit-avatar">SS</div>
+                        </div>
+                        <div class="student-meta">
+                            <h4 class="st-name">STHITI P. SAHOO</h4>
+                            <p class="st-college">IIT-DELHI</p>
+                            <p class="st-branch">COMPUTER SCIENCE</p>
+                        </div>
+                    </div>
+
+                    <!-- Student 4: Jyotiraditya Mishra -->
+                    <div class="student-card-item">
+                        <div class="student-photo-frame">
+                            <div class="suit-avatar">JM</div>
+                        </div>
+                        <div class="student-meta">
+                            <h4 class="st-name">JYOTIRADITYA MISHRA</h4>
+                            <p class="st-college">IIT-BOMBAY</p>
+                            <p class="st-branch">ENGINEERING PHYSICS</p>
+                        </div>
+                    </div>
+
+                    <!-- Student 5: Rukmangadh Sai -->
+                    <div class="student-card-item">
+                        <div class="student-photo-frame">
+                            <div class="suit-avatar">RS</div>
+                        </div>
+                        <div class="student-meta">
+                            <h4 class="st-name">RUKMANGADH SAI</h4>
+                            <p class="st-college">IIT-BOMBAY</p>
+                            <p class="st-branch">COMPUTER SCIENCE</p>
+                        </div>
+                    </div>
+
+                    <!-- Student 6: Satyaprajna S. Sahoo -->
+                    <div class="student-card-item">
+                        <div class="student-photo-frame">
+                            <div class="suit-avatar">SA</div>
+                        </div>
+                        <div class="student-meta">
+                            <h4 class="st-name">SATYAPRAJNA S. SAHOO</h4>
+                            <p class="st-college">IIT-BOMBAY</p>
+                            <p class="st-branch">CHEMICAL ENGINEERING</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL FOR EXPERIENCE GALLERY -->
+    <div class="lightbox-modal" id="galleryLightbox">
+        <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()"><i class="ri-close-line"></i></button>
+            <img id="lightboxImg" src="" alt="Full view image">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="brand-logo footer-logo" title="Vidwan Classes Official Logo">
+                    <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img footer-logo-img">
+                </a>
+                <p class="footer-about">
+                    Vidwan Classes Pvt. Ltd. is Odisha's premier competitive exam coaching institute dedicated to nurturing future engineers, doctors, and scientists since 2007.
+                </p>
+                <div class="footer-cert">
+                    <i class="ri-shield-star-line"></i> Registered ISO Certified Institute
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Popular Programs</h4>
+                <ul>
+                    <li><a href="course-details.html?id=nurture">Nurture 2-Year Integrated</a></li>
+                    <li><a href="course-details.html?id=qualifier">Qualifier 1-Year Intensive</a></li>
+                    <li><a href="course-details.html?id=target">Target Dropper Batch</a></li>
+                    <li><a href="course-details.html?id=prefoundation">Pre-Foundation Olympiad</a></li>
+                    <li><a href="course-details.html?id=digiconnect">Digi-Connect Online</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Management</a></li>
+                    <li><a href="faculty.html">Faculty & Mentors</a></li>
+                    <li><a href="results.html">Success Stories & Ranks</a></li>
+                    <li><a href="gallery.html">Gallery & Student Showcase</a></li>
+                    <li><a href="vst.html">VST Scholarship 2026</a></li>
+                    <li><a href="contact.html">Contact & Campuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Exam Alert Newsletter</h4>
+                <p>Subscribe to receive updates on JEE/NEET exam dates, syllabus changes & free study resources.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Vidwan Classes Private Limited. All Rights Reserved. Built with excellence.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919777440451?text=Hello%20Vidwan%20Classes,%20I%20want%20information%20regarding%20the%20institute." target="_blank" class="float-btn whatsapp-btn">
+            <i class="ri-whatsapp-line"></i>
+        </a>
+        <a href="tel:+919777440451" class="float-btn phone-btn">
+            <i class="ri-phone-line"></i>
+        </a>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="applyModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('applyModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-file-text-line"></i> Online Admission Application 2026-27</h3>
+            </div>
+            <form id="modalApplyForm" onsubmit="handleFormSubmit(event, 'Modal Application Form')">
+                <div class="input-group">
+                    <label>Student's Full Name *</label>
+                    <input type="text" required placeholder="Enter student's name">
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Email Address *</label>
+                        <input type="email" required placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <label>Mobile Number *</label>
+                        <input type="tel" required placeholder="10 digit mobile">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">
+                    Submit Application Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="callbackModal">
+        <div class="modal-card glass-panel sm-modal">
+            <button class="modal-close" onclick="closeModal('callbackModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-customer-service-2-line"></i> Request A Counselor Call</h3>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Callback Request')">
+                <div class="input-group">
+                    <label>Your Name *</label>
+                    <input type="text" required placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required placeholder="Mobile Number">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">Request Callback</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
