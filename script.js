@@ -913,69 +913,94 @@ function scrollStudentCarousel(direction) {
     track.style.transform = `translateX(-${studentCarouselPosition}px)`;
 }
 
-/* 14. Book Album Flipbook Gallery Engine */
-let currentBookPage = 0;
+/* 14. Experience Gallery Showcase Slider Engine */
+let currentExpSlide = 0;
 
-function updateBookPage(index) {
-    const pages = document.querySelectorAll('.book-page');
-    const thumbs = document.querySelectorAll('.book-thumb-item');
-    const counterEl = document.getElementById('bookPageCounter');
+function updateExpSlide(index) {
+    const slides = document.querySelectorAll('.exp-slide');
+    const dots = document.querySelectorAll('.exp-dot');
+    const counterEl = document.getElementById('expCounterPill');
 
-    if (pages.length === 0) return;
+    if (slides.length === 0) return;
 
-    currentBookPage = (index + pages.length) % pages.length;
+    currentExpSlide = (index + slides.length) % slides.length;
 
-    pages.forEach((page, i) => {
-        if (i === currentBookPage) {
-            page.classList.add('active');
+    slides.forEach((slide, i) => {
+        if (i === currentExpSlide) {
+            slide.classList.add('active');
         } else {
-            page.classList.remove('active');
+            slide.classList.remove('active');
         }
     });
 
-    thumbs.forEach((thumb, i) => {
-        if (i === currentBookPage) {
-            thumb.classList.add('active');
+    dots.forEach((dot, i) => {
+        if (i === currentExpSlide) {
+            dot.classList.add('active');
         } else {
-            thumb.classList.remove('active');
+            dot.classList.remove('active');
         }
     });
 
     if (counterEl) {
-        counterEl.textContent = `Page ${currentBookPage + 1} of ${pages.length}`;
+        counterEl.textContent = `Image ${currentExpSlide + 1} of ${slides.length}`;
     }
 }
 
-function nextBookPage() {
-    updateBookPage(currentBookPage + 1);
+function nextExpSlide() {
+    updateExpSlide(currentExpSlide + 1);
 }
 
-function prevBookPage() {
-    updateBookPage(currentBookPage - 1);
+function prevExpSlide() {
+    updateExpSlide(currentExpSlide - 1);
 }
 
-function goToBookPage(index) {
-    updateBookPage(index);
+function goToExpSlide(index) {
+    updateExpSlide(index);
 }
 
-function switchExperienceView(viewType) {
-    const bookStage = document.getElementById('bookAlbumStage');
-    const gridStage = document.getElementById('experienceGrid');
-    const btnBook = document.getElementById('viewBtnBook');
-    const btnGrid = document.getElementById('viewBtnGrid');
+// Touch swipe support & keyboard arrow navigation for Experience Gallery Slider
+document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.getElementById('expSlidesWrapper');
+    if (!wrapper) return;
 
-    if (viewType === 'book') {
-        if (bookStage) bookStage.style.display = 'block';
-        if (gridStage) gridStage.style.display = 'none';
-        if (btnBook) btnBook.classList.add('active');
-        if (btnGrid) btnGrid.classList.remove('active');
-    } else {
-        if (bookStage) bookStage.style.display = 'none';
-        if (gridStage) gridStage.style.display = 'grid';
-        if (btnBook) btnBook.classList.remove('active');
-        if (btnGrid) btnGrid.classList.add('active');
+    let startX = 0;
+    let endX = 0;
+
+    wrapper.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const threshold = 40;
+        if (startX - endX > threshold) {
+            nextExpSlide();
+        } else if (endX - startX > threshold) {
+            prevExpSlide();
+        }
     }
-}
+
+    document.addEventListener('keydown', (e) => {
+        const expSection = document.getElementById('experience');
+        if (!expSection) return;
+        
+        // Only trigger arrow keys when experience section is in viewport
+        const rect = expSection.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isInViewport) {
+            if (e.key === 'ArrowRight') {
+                nextExpSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevExpSlide();
+            }
+        }
+    });
+});
 
 
 

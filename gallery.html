@@ -111,45 +111,41 @@
     </section>
 
     <!-- ==========================================================================
-       SECTION 1: EXPERIENCE GALLERY
+       SECTION 1: EXPERIENCE GALLERY (Scrolling Showcase Slider)
        ========================================================================== -->
     <section class="section-padding" id="experience" style="padding-top: 1rem;">
         <div class="container">
             <div class="section-header text-center">
                 <span class="sub-heading">— LIFE AT VIDWAN —</span>
                 <h2 class="section-title">Experience <span class="text-gradient">Gallery</span></h2>
-                <p class="section-desc">Flip through the Vidwan Classes Achievement Book — classroom moments, historical JEE Advanced toppers banners, Olympiad stars, and CBT computer labs.</p>
-
-                <!-- View Switcher (Book Album vs Grid View) -->
-                <div class="view-toggle-bar">
-                    <button class="view-btn active" id="viewBtnBook" onclick="switchExperienceView('book')">
-                        <i class="ri-book-open-line"></i> Book Flipbook View
-                    </button>
-                    <button class="view-btn" id="viewBtnGrid" onclick="switchExperienceView('grid')">
-                        <i class="ri-grid-fill"></i> Grid View
-                    </button>
-                </div>
+                <p class="section-desc">Explore classroom moments, historical JEE Advanced toppers banners, Olympiad stars, and CBT computer labs.</p>
             </div>
 
-            <!-- ==========================================================================
-               3D BOOK ALBUM FLIPBOOK SHOWCASE (PRIMARY DISPLAY)
-               ========================================================================== -->
-            <div class="book-album-stage" id="bookAlbumStage">
-                <div class="book-spine-effect"></div>
+            <!-- Experience Slider Showcase -->
+            <div class="exp-slider-container">
+                <!-- Left & Right Arrow Controls -->
+                <button class="exp-slider-arrow exp-prev-btn" onclick="prevExpSlide()" aria-label="Previous Image">
+                    <i class="ri-chevron-left-line"></i>
+                </button>
+                <button class="exp-slider-arrow exp-next-btn" onclick="nextExpSlide()" aria-label="Next Image">
+                    <i class="ri-chevron-right-line"></i>
+                </button>
 
-                <div class="book-pages-wrapper">
-                    <!-- Page 1: Photo 1 (JEE Advanced 2017) -->
-                    <div class="book-page active">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 1.jpg', 'JEE Advanced 2017 - 98 Total Selections in IITs | Aadarsh Sahoo (IIT Kharagpur CS), Siddharth Sehgal (IIT Delhi), Sonal S. Sharma (IIT Delhi)')">
+                <!-- Slides Wrapper -->
+                <div class="exp-slides-wrapper" id="expSlidesWrapper">
+
+                    <!-- Slide 1: Photo 1 (JEE Advanced 2017) -->
+                    <div class="exp-slide active">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 1.jpg', 'JEE Advanced 2017 - 98 Total Selections in IITs | Aadarsh Sahoo (IIT Kharagpur CS), Siddharth Sehgal (IIT Delhi), Sonal S. Sharma (IIT Delhi)')">
                                 <img src="assets/photo 1.jpg" alt="JEE Advanced 2017 Selections Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">JEE ADVANCED 2017</span>
                                     <h3>98 Total Selections in IITs</h3>
-                                    <p>Top Ranks in IIT Kharagpur, IIT Delhi, IIT Kanpur & IIT Bombay</p>
+                                    <p>Top Ranks in IIT Kharagpur, IIT Delhi, IIT Kanpur & IIT Bombay | Aadarsh Sahoo, Siddharth Sehgal, Sonal S. Sharma</p>
                                 </div>
                                 <button class="btn btn-primary btn-sm glow-btn" onclick="openLightbox('assets/photo 1.jpg', 'JEE Advanced 2017 - 98 Total Selections in IITs')">
                                     <i class="ri-fullscreen-line"></i> Enlarge
@@ -158,18 +154,18 @@
                         </div>
                     </div>
 
-                    <!-- Page 2: Photo 2 (JEE Advanced 2014) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 2.png', 'JEE Advanced 2014 - 270 Selections | State Toppers Sattwik Dev Mishra (AIR 131) & Debarnab Mitra (AIR 168) in IIT Bombay Electrical')">
+                    <!-- Slide 2: Photo 2 (JEE Advanced 2014) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 2.png', 'JEE Advanced 2014 - 270 Selections | State Toppers Sattwik Dev Mishra (AIR 131) & Debarnab Mitra (AIR 168)')">
                                 <img src="assets/photo 2.png" alt="JEE Advanced 2014 Selections Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">JEE ADVANCED 2014</span>
                                     <h3>270 Selections | State Toppers AIR 131 & 168</h3>
-                                    <p>Historic Selections in IIT Bombay Electrical & IIT Kanpur</p>
+                                    <p>Historic Selections in IIT Bombay Electrical & IIT Kanpur | Sattwik Dev Mishra & Debarnab Mitra</p>
                                 </div>
                                 <button class="btn btn-primary btn-sm glow-btn" onclick="openLightbox('assets/photo 2.png', 'JEE Advanced 2014 - 270 Selections')">
                                     <i class="ri-fullscreen-line"></i> Enlarge
@@ -178,15 +174,15 @@
                         </div>
                     </div>
 
-                    <!-- Page 3: Photo 3 (JEE Advanced 2015) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 3.jpg', 'JEE Advanced 2015 - 66 Selections | Vineet Ekka (IIT Kharagpur Mechanical), Shobhna Misra (IIT Bombay Engg. Physics)')">
+                    <!-- Slide 3: Photo 3 (JEE Advanced 2015) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 3.jpg', 'JEE Advanced 2015 - 66 Selections | Vineet Ekka (IIT Kharagpur Mechanical), Shobhna Misra (IIT Bombay Engg. Physics)')">
                                 <img src="assets/photo 3.jpg" alt="JEE Advanced 2015 Selections Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">JEE ADVANCED 2015</span>
                                     <h3>66 Selections | Vineet Ekka & Shobhna Misra</h3>
                                     <p>IIT Kharagpur, IIT Bombay & IIT BHU Top Selections</p>
@@ -198,35 +194,35 @@
                         </div>
                     </div>
 
-                    <!-- Page 4: Photo 4 (JEE Advanced 2016) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 4.jpg', 'JEE Advanced 2016 - 112 Selections out of 242 | Rukmangadh Sai (IIT Bombay CS), Satyaprajna S. Sahoo (IIT Bombay Chemical)')">
+                    <!-- Slide 4: Photo 4 (JEE Advanced 2016) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 4.jpg', 'JEE Advanced 2016 - 112 Selections out of 242 | Rukmangadh Sai (IIT Bombay CS), Satyaprajna S. Sahoo (IIT Bombay Chemical)')">
                                 <img src="assets/photo 4.jpg" alt="JEE Advanced 2016 Selections Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">JEE ADVANCED 2016</span>
                                     <h3>112 Selections out of 242 Students</h3>
-                                    <p>32 Students Under AIR 5000 | 64 Under AIR 7000</p>
+                                    <p>32 Students Under AIR 5000 | Rukmangadh Sai (IIT Bombay CS), Satyaprajna S. Sahoo (IIT Bombay Chemical)</p>
                                 </div>
-                                <button class="btn btn-primary btn-sm glow-btn" onclick="openLightbox('assets/photo 4.jpg', 'JEE Advanced 2016 - 112 Selections out of 242')">
+                                <button class="btn btn-primary btn-sm glow-btn" onclick="openLightbox('assets/photo 4.jpg', 'JEE Advanced 2016 - 112 Selections')">
                                     <i class="ri-fullscreen-line"></i> Enlarge
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Page 5: Photo 5 (JEE Advanced 2018) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 5.jpg', 'JEE Advanced 2018 - 113 Selections out of 201 | B. Smayan Das, Ashish, Krishna (IIT Kharagpur Computer Science)')">
+                    <!-- Slide 5: Photo 5 (JEE Advanced 2018) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 5.jpg', 'JEE Advanced 2018 - 113 Selections out of 201 | B. Smayan Das (IIT Kharagpur Computer Science)')">
                                 <img src="assets/photo 5.jpg" alt="JEE Advanced 2018 Selections Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">JEE ADVANCED 2018</span>
                                     <h3>113 Selections | B. Smayan Das (IIT Kharagpur CS)</h3>
                                     <p>School Integrated Program (SIP) & Classroom Program (CRP) Stars</p>
@@ -238,15 +234,15 @@
                         </div>
                     </div>
 
-                    <!-- Page 6: Photo 6 (JEE Main State Topper Banner) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 6.jpg', 'JEE Main State Topper Banner - Sourabh S. Das (99.99 Percentile) & Sthiti P. Sahoo (99.98 Percentile)')">
+                    <!-- Slide 6: Photo 6 (JEE Main State Toppers Banner) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 6.jpg', 'JEE Main State Topper Banner - Sourabh S. Das (99.99 Percentile) & Sthiti P. Sahoo (99.98 Percentile)')">
                                 <img src="assets/photo 6.jpg" alt="JEE Main State Toppers Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">JEE MAIN STATE TOPPERS</span>
                                     <h3>Sourabh S. Das (99.99%ile) & Sthiti P. Sahoo (99.98%ile)</h3>
                                     <p>Odisha State Rank 1 Victory & Record Percentiles</p>
@@ -258,15 +254,15 @@
                         </div>
                     </div>
 
-                    <!-- Page 7: Photo 7 (JEE Advanced 2019 Banner) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 7.jpg', 'JEE Advanced 2019 Toppers Banner - Harikiran (IIT Madras CS), Kanha Jani (IIT Kharagpur), Tridibesh Nayak')">
+                    <!-- Slide 7: Photo 7 (JEE Advanced 2019 Banner) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 7.jpg', 'JEE Advanced 2019 Toppers Banner - Harikiran (IIT Madras CS), Kanha Jani (IIT Kharagpur)')">
                                 <img src="assets/photo 7.jpg" alt="JEE Advanced 2019 Selections Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">JEE ADVANCED 2019</span>
                                     <h3>Harikiran (IIT Madras CS) & Top Engineering Stars</h3>
                                     <p>135+ Selections in Premier IITs & NITs</p>
@@ -278,15 +274,15 @@
                         </div>
                     </div>
 
-                    <!-- Page 8: Photo 8 (JEE Advanced 2018 Special Selection Ranks) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 8.jpg', 'JEE Advanced 2018 Special Selection Ranks Banner')">
+                    <!-- Slide 8: Photo 8 (JEE Advanced 2018 Special Selection Ranks) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 8.jpg', 'JEE Advanced 2018 Special Selection Ranks Banner')">
                                 <img src="assets/photo 8.jpg" alt="JEE Advanced 2018 Special Selection Ranks">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">HALL OF FAME 2018</span>
                                     <h3>Specialized Rank Booster Batch Achievements</h3>
                                     <p>Subham (IIT Delhi), Bhawani (IIT Guwahati), Kaustuv (IIT Madras)</p>
@@ -298,35 +294,35 @@
                         </div>
                     </div>
 
-                    <!-- Page 9: Photo 9 (Deevyanshu & Deeptanshu Malu Spotlight) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 9.jpg', 'Deevyanshu Malu (AIR 11) & Deeptanshu Malu (AIR 228) - Want To Be Under AIR 500 In IIT-JEE Advanced 2023?')">
+                    <!-- Slide 9: Photo 9 (Deevyanshu & Deeptanshu Malu Spotlight) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 9.jpg', 'Deevyanshu Malu (AIR 11) & Deeptanshu Malu (AIR 228) - Top 100 Rank Spotlight')">
                                 <img src="assets/photo 9.jpg" alt="Deevyanshu & Deeptanshu Malu AIR 11 Spotlight Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">TOP 100 RANK SPOTLIGHT</span>
                                     <h3>Deevyanshu Malu (AIR 11) & Deeptanshu Malu (AIR 228)</h3>
-                                    <p>Highest Number of IITians Produced From Odisha</p>
+                                    <p>Highest Number of IITians Produced From Odisha | Mentored by Jyoti Ranjan Tripathy</p>
                                 </div>
-                                <button class="btn btn-primary btn-sm glow-btn" onclick="openLightbox('assets/photo 9.jpg', 'Deevyanshu Malu (AIR 11) & Deeptanshu Malu (AIR 228)')">
+                                <button class="btn btn-primary btn-sm glow-btn" onclick="openLightbox('assets/photo 9.jpg', 'Deevyanshu Malu AIR 11 Spotlight Banner')">
                                     <i class="ri-fullscreen-line"></i> Enlarge
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Page 10: Photo 10 (Asian Physics Olympiad Divyanshu Mallu) -->
-                    <div class="book-page">
-                        <div class="book-page-content">
-                            <div class="book-image-wrapper" onclick="openLightbox('assets/photo 10.jpg', 'Asian Physics Olympiad (APhO) Silver Medalist Divyanshu Mallu - Pride of Vidwan & AIR 1 APhO')">
+                    <!-- Slide 10: Photo 10 (Asian Physics Olympiad Divyanshu Mallu) -->
+                    <div class="exp-slide">
+                        <div class="exp-slide-card">
+                            <div class="exp-image-box" onclick="openLightbox('assets/photo 10.jpg', 'Asian Physics Olympiad (APhO) Silver Medalist Divyanshu Mallu')">
                                 <img src="assets/photo 10.jpg" alt="Asian Physics Olympiad Silver Medalist Divyanshu Mallu Banner">
-                                <div class="book-image-overlay"><i class="ri-zoom-in-line"></i> Click To View Fullscreen</div>
+                                <div class="exp-image-overlay"><i class="ri-zoom-in-line"></i> Click to Enlarge</div>
                             </div>
-                            <div class="book-page-caption">
-                                <div class="book-page-info">
+                            <div class="exp-slide-info">
+                                <div class="exp-info-meta">
                                     <span class="gallery-tag">OLYMPIAD GOLD & SILVER</span>
                                     <h3>Divyanshu Mallu — Asian Physics Olympiad (APhO) Silver Medalist</h3>
                                     <p>AIR 1 APhO & International Physics Glory for India</p>
@@ -337,69 +333,31 @@
                             </div>
                         </div>
                     </div>
+
+                </div> <!-- /.exp-slides-wrapper -->
+
+                <!-- Dots Pagination Row (Matching user reference screenshot) -->
+                <div class="exp-dots-row" id="expDotsRow">
+                    <span class="exp-dot active" onclick="goToExpSlide(0)" title="Image 1"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(1)" title="Image 2"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(2)" title="Image 3"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(3)" title="Image 4"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(4)" title="Image 5"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(5)" title="Image 6"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(6)" title="Image 7"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(7)" title="Image 8"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(8)" title="Image 9"></span>
+                    <span class="exp-dot" onclick="goToExpSlide(9)" title="Image 10"></span>
                 </div>
 
-                <!-- Book Controls Bar -->
-                <div class="book-controls-bar">
-                    <button class="book-arrow-btn" onclick="prevBookPage()">
-                        <i class="ri-arrow-left-line"></i> Previous Page
-                    </button>
-                    <span class="book-counter" id="bookPageCounter">Page 1 of 10</span>
-                    <button class="book-arrow-btn" onclick="nextBookPage()">
-                        Next Page <i class="ri-arrow-right-line"></i>
-                    </button>
+                <!-- Image Counter Pill Badge (Matching user reference screenshot) -->
+                <div class="text-center">
+                    <div class="exp-counter-pill" id="expCounterPill">
+                        Image 1 of 10
+                    </div>
                 </div>
 
-                <!-- Book Page Thumbnails Ribbon -->
-                <div class="book-thumb-ribbon">
-                    <div class="book-thumb-item active" onclick="goToBookPage(0)" title="Page 1: JEE Advanced 2017"><img src="assets/photo 1.jpg" alt="P1"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(1)" title="Page 2: JEE Advanced 2014"><img src="assets/photo 2.png" alt="P2"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(2)" title="Page 3: JEE Advanced 2015"><img src="assets/photo 3.jpg" alt="P3"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(3)" title="Page 4: JEE Advanced 2016"><img src="assets/photo 4.jpg" alt="P4"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(4)" title="Page 5: JEE Advanced 2018"><img src="assets/photo 5.jpg" alt="P5"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(5)" title="Page 6: JEE Main State Toppers"><img src="assets/photo 6.jpg" alt="P6"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(6)" title="Page 7: JEE Advanced 2019"><img src="assets/photo 7.jpg" alt="P7"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(7)" title="Page 8: Special Selection Ranks"><img src="assets/photo 8.jpg" alt="P8"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(8)" title="Page 9: AIR 11 Malu Twins"><img src="assets/photo 9.jpg" alt="P9"></div>
-                    <div class="book-thumb-item" onclick="goToBookPage(9)" title="Page 10: Physics Olympiad APhO"><img src="assets/photo 10.jpg" alt="P10"></div>
-                </div>
-            </div>
-
-            <!-- Alternative Grid View (Hidden by default) -->
-            <div class="gallery-grid" id="experienceGrid" style="display: none;">
-                <div class="gallery-item" onclick="openLightbox('assets/photo 1.jpg', 'JEE Advanced 2017 - 98 Total Selections in IITs')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 1.jpg" alt="JEE 2017"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 2.png', 'JEE Advanced 2014 - 270 Selections')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 2.png" alt="JEE 2014"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 3.jpg', 'JEE Advanced 2015 - 66 Selections')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 3.jpg" alt="JEE 2015"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 4.jpg', 'JEE Advanced 2016 - 112 Selections')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 4.jpg" alt="JEE 2016"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 5.jpg', 'JEE Advanced 2018 - 113 Selections')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 5.jpg" alt="JEE 2018"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 6.jpg', 'JEE Main State Toppers Banner')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 6.jpg" alt="JEE Main State Toppers"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 7.jpg', 'JEE Advanced 2019 Banner')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 7.jpg" alt="JEE 2019"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 8.jpg', 'JEE Advanced 2018 Special Ranks')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 8.jpg" alt="JEE 2018 Ranks"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 9.jpg', 'AIR 11 Deevyanshu Malu Banner')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 9.jpg" alt="AIR 11 Malu Twins"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('assets/photo 10.jpg', 'Asian Physics Olympiad Silver Medalist Divyanshu Mallu')">
-                    <div class="gallery-img-wrapper"><img src="assets/photo 10.jpg" alt="Physics Olympiad"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </div> <!-- /.exp-slider-container -->
         </div>
     </section>
 

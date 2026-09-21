@@ -3048,225 +3048,238 @@ input[type="range"]::-webkit-slider-thumb {
     margin-top: 1.5rem;
 }
 
-.view-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1.25rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-full);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.view-btn.active,
-.view-btn:hover {
-    background: var(--gold);
-    color: #000;
-    border-color: var(--gold);
-    font-weight: 700;
-}
-
-.book-album-stage {
+/* ==========================================================================
+   EXPERIENCE GALLERY SCROLLING SHOWCASE SLIDER
+   ========================================================================== */
+.exp-slider-container {
     position: relative;
-    max-width: 1050px;
-    margin: 2.5rem auto 0;
-    background: linear-gradient(135deg, rgba(13, 27, 42, 0.98) 0%, rgba(10, 17, 40, 0.99) 100%);
-    border-radius: var(--radius-lg);
-    border: 2px solid rgba(255, 183, 3, 0.35);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
-    padding: 2.5rem 2rem 2rem;
+    max-width: 1100px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
 }
 
-.book-spine-effect {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 6px;
-    transform: translateX(-50%);
-    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(255,255,255,0.15), rgba(0,0,0,0.5));
-    box-shadow: 0 0 15px rgba(0,0,0,0.8);
-    z-index: 10;
-    pointer-events: none;
-}
-
-.book-pages-wrapper {
-    position: relative;
-    min-height: 480px;
-    perspective: 1200px;
-    margin-bottom: 2rem;
-}
-
-.book-page {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: rotateY(-15deg) scale(0.96);
-    transform-origin: left center;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    display: flex;
-    flex-direction: column;
-}
-
-.book-page.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: rotateY(0deg) scale(1);
-}
-
-.book-page-content {
-    background: rgba(18, 25, 48, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-md);
-    padding: 1.5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
-.book-image-wrapper {
+.exp-slides-wrapper {
     position: relative;
     width: 100%;
-    height: 360px;
+    border-radius: 24px;
     overflow: hidden;
-    border-radius: var(--radius-sm);
-    border: 2px solid var(--gold);
-    cursor: pointer;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 242, 254, 0.08);
 }
 
-.book-image-wrapper img {
+.exp-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.exp-slide.active {
+    display: block;
+    opacity: 1;
+    animation: slideFadeIn 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.exp-slide-card {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-.book-image-wrapper:hover img {
-    transform: scale(1.04);
-}
-
-.book-image-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+.exp-image-box {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #060913;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.exp-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.exp-image-box:hover img {
+    transform: scale(1.02);
+}
+
+.exp-image-overlay {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(6, 9, 19, 0.8);
+    backdrop-filter: blur(8px);
+    color: #00f2fe;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 242, 254, 0.35);
     opacity: 0;
-    transition: opacity 0.3s ease;
-    color: var(--gold);
-    font-size: 1.25rem;
-    font-weight: 700;
+    transform: translateY(-6px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.book-image-wrapper:hover .book-image-overlay {
+.exp-image-box:hover .exp-image-overlay {
     opacity: 1;
+    transform: translateY(0);
 }
 
-.book-page-caption {
-    margin-top: 1.25rem;
+.exp-slide-info {
+    padding: 1.5rem 2rem;
+    background: rgba(11, 17, 32, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
 }
 
-.book-page-info h3 {
-    font-size: 1.25rem;
-    color: #FFF;
-    margin: 0 0 0.25rem;
+.exp-info-meta {
+    flex: 1;
 }
 
-.book-page-info p {
-    font-size: 0.95rem;
-    color: var(--cyan-glow);
+.exp-info-meta .gallery-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(0, 242, 254, 0.12);
+    color: #00f2fe;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+.exp-info-meta h3 {
+    font-size: 1.35rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.exp-info-meta p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.92rem;
+    line-height: 1.4;
     margin: 0;
 }
 
-.book-controls-bar {
+/* Side Arrow Buttons */
+.exp-slider-arrow {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: #ffffff;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.book-arrow-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.4rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-full);
-    color: #FFF;
-    font-size: 0.95rem;
-    font-weight: 700;
+    justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.book-arrow-btn:hover {
-    background: var(--gold);
-    color: #000;
-    border-color: var(--gold);
-    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+.exp-prev-btn {
+    left: -20px;
 }
 
-.book-counter {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--gold);
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.4rem 1.2rem;
-    border-radius: var(--radius-full);
-    border: 1px solid rgba(255, 183, 3, 0.3);
+.exp-next-btn {
+    right: -20px;
 }
 
-.book-thumb-ribbon {
+.exp-slider-arrow:hover {
+    background: #00f2fe;
+    color: #060913;
+    border-color: #00f2fe;
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Dots Row (Matching User Reference Image Design) */
+.exp-dots-row {
     display: flex;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.8rem;
 }
 
-.book-thumb-item {
-    flex: 0 0 70px;
-    height: 50px;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
+.exp-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
     cursor: pointer;
-    border: 2px solid transparent;
-    opacity: 0.6;
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.book-thumb-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.exp-dot.active {
+    width: 36px;
+    height: 10px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    box-shadow: 0 0 14px rgba(0, 242, 254, 0.7);
 }
 
-.book-thumb-item.active,
-.book-thumb-item:hover {
-    opacity: 1;
-    border-color: var(--gold);
-    transform: translateY(-3px);
+.exp-dot:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/* Image Counter Pill Badge (Matching User Reference Image Design) */
+.exp-counter-pill {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 6px 20px;
+    border-radius: 30px;
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: #00f2fe;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
-    .book-pages-wrapper { min-height: 400px; }
-    .book-image-wrapper { height: 260px; }
-    .book-spine-effect { display: none; }
+    .exp-image-box { height: 320px; }
+    .exp-slide-info {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+    }
+    .exp-prev-btn { left: 8px; }
+    .exp-next-btn { right: 8px; }
+    .exp-info-meta h3 { font-size: 1.15rem; }
 }
 
 
