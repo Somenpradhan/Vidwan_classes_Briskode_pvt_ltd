@@ -112,6 +112,26 @@ function App() {
           </ul>
         </div>
       </section>
+      <section id="courses">
+        <div id="courses">
+          <h2>Courses</h2>
+          <p>Explore our courses</p>
+          <ul>
+            <li>
+              <a href="https://github.com/vitejs/vite" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#github-icon"></use>
+                </svg>
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <div className="ticks"></div>
       <section id="spacer"></section>

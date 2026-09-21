@@ -162,16 +162,21 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--amber-orange) 100%);
-    color: #000;
-    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.25);
+.btn-primary,
+.btn-gold {
+    background: linear-gradient(135deg, #FFB703 0%, #FB8500 100%) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.35);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-gold:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-glow);
-    background: linear-gradient(135deg, #FFC324 0%, #FF9100 100%);
+    box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+    background: linear-gradient(135deg, #FFC324 0%, #FF9100 100%) !important;
+    color: #000000 !important;
 }
 
 .btn-secondary {
