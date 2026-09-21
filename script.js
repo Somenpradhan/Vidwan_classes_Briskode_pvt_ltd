@@ -915,6 +915,7 @@ function scrollStudentCarousel(direction) {
 
 /* 14. Experience Gallery Showcase Slider Engine */
 let currentExpSlide = 0;
+let expAutoplayTimer = null;
 
 function updateExpSlide(index) {
     const slides = document.querySelectorAll('.exp-slide');
@@ -946,6 +947,25 @@ function updateExpSlide(index) {
     }
 }
 
+function startExpAutoplay() {
+    stopExpAutoplay();
+    expAutoplayTimer = setInterval(() => {
+        nextExpSlide();
+    }, 3500); // Auto scrolls every 3.5 seconds
+}
+
+function stopExpAutoplay() {
+    if (expAutoplayTimer) {
+        clearInterval(expAutoplayTimer);
+        expAutoplayTimer = null;
+    }
+}
+
+function resetExpAutoplay() {
+    stopExpAutoplay();
+    startExpAutoplay();
+}
+
 function nextExpSlide() {
     updateExpSlide(currentExpSlide + 1);
 }
@@ -956,23 +976,37 @@ function prevExpSlide() {
 
 function goToExpSlide(index) {
     updateExpSlide(index);
+    resetExpAutoplay();
 }
 
-// Touch swipe support & keyboard arrow navigation for Experience Gallery Slider
+// Touch swipe support, autoplay & keyboard arrow navigation for Experience Gallery Slider
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.getElementById('expSlidesWrapper');
+    const container = document.querySelector('.exp-slider-container');
     if (!wrapper) return;
 
+    // Start automatic scrolling
+    startExpAutoplay();
+
+    // Pause autoplay on mouse enter and resume on mouse leave
+    if (container) {
+        container.addEventListener('mouseenter', stopExpAutoplay);
+        container.addEventListener('mouseleave', startExpAutoplay);
+    }
+
+    // Touch swipe handling
     let startX = 0;
     let endX = 0;
 
     wrapper.addEventListener('touchstart', (e) => {
+        stopExpAutoplay();
         startX = e.changedTouches[0].screenX;
     }, { passive: true });
 
     wrapper.addEventListener('touchend', (e) => {
         endX = e.changedTouches[0].screenX;
         handleSwipe();
+        startExpAutoplay();
     }, { passive: true });
 
     function handleSwipe() {
@@ -984,19 +1018,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Keyboard arrow handling
     document.addEventListener('keydown', (e) => {
         const expSection = document.getElementById('experience');
         if (!expSection) return;
         
-        // Only trigger arrow keys when experience section is in viewport
         const rect = expSection.getBoundingClientRect();
         const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
         
         if (isInViewport) {
             if (e.key === 'ArrowRight') {
                 nextExpSlide();
+                resetExpAutoplay();
             } else if (e.key === 'ArrowLeft') {
                 prevExpSlide();
+                resetExpAutoplay();
             }
         }
     });
