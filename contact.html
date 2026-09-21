@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & Campuses | Vidwan Classes</title>
+    <meta name="description" content="Contact Vidwan Classes head office at District Centre, Chandrasekharpur, Bhubaneswar. Call hotlines, send inquiries, or visit our modern campus.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <div class="announcement-tag"><i class="ri-flashlight-fill"></i> ADMISSIONS OPEN 2026-27</div>
+            <div class="announcement-text">
+                Vidwan Talent Search Test (VST) 2026 Registration is now LIVE! Avail up to <strong>90% Scholarship</strong>.
+            </div>
+            <a href="vst.html" class="announcement-link">Register Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+    </div>
+
+    <!-- Header Utility Bar -->
+    <header class="utility-bar">
+        <div class="container utility-container">
+            <div class="utility-left">
+                <a href="tel:+919777440451"><i class="ri-phone-fill"></i> +91-9777440451 / 465</a>
+                <a href="mailto:info@vidwanclasses.com"><i class="ri-mail-fill"></i> info@vidwanclasses.com</a>
+                <span class="utility-loc"><i class="ri-map-pin-2-fill"></i> District Centre, C.S. Pur, Bhubaneswar</span>
+            </div>
+            <div class="utility-right">
+                <a href="about.html">Our Management</a>
+                <span class="dot">•</span>
+                <a href="faculty.html">Faculty Team</a>
+                <span class="dot">•</span>
+                <a href="vst.html">Scholarships</a>
+                <span class="dot">•</span>
+                <button class="btn-text-link" onclick="openModal('callbackModal')"><i class="ri-customer-service-2-line"></i> Request Callback</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" title="Vidwan Classes Official Logo">
+                <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img">
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="courses.html" class="nav-link dropdown-toggle">Courses <i class="ri-chevron-down-s-line"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="course-details.html?id=nurture"><i class="ri-compass-3-line"></i> Nurture (Class XI)</a>
+                        <a href="course-details.html?id=qualifier"><i class="ri-heart-pulse-line"></i> Qualifier (Class XII)</a>
+                        <a href="course-details.html?id=target"><i class="ri-trophy-line"></i> Target (Droppers)</a>
+                        <a href="course-details.html?id=prefoundation"><i class="ri-honour-line"></i> Pre-Foundation</a>
+                        <a href="course-details.html?id=digiconnect"><i class="ri-laptop-line"></i> Digi-Connect Online</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="faculty.html" class="nav-link">Faculty</a>
+                <a href="results.html" class="nav-link">Our Success</a>
+                <a href="vst.html" class="nav-link">Scholarship (VST)</a>
+                <a href="contact.html" class="nav-link active">Contact Us</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="openBrochureBtn">
+                    <i class="ri-file-download-line"></i> Syllabus
+                </button>
+                <button class="btn btn-primary glow-btn" onclick="openModal('applyModal')">
+                    <i class="ri-edit-box-line"></i> Apply Now
+                </button>
+                <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="breadcrumb-trail">
+                <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span>Contact Us & Location</span>
+            </div>
+            <h1 class="page-banner-title">Contact <span class="text-gradient">Vidwan Classes</span></h1>
+            <p class="page-banner-subtitle">Connect with our senior academic counselors for admissions, campus visits, or fee structure inquiries.</p>
+        </div>
+    </section>
+
+    <!-- Contact Grid Section -->
+    <section class="section-padding contact-section" style="padding-top: 1rem;">
+        <div class="container contact-grid">
+            <div class="contact-info-card">
+                <span class="sub-heading">— GET IN TOUCH —</span>
+                <h2>Visit Our Corporate Head Office</h2>
+                <p>Have questions regarding admission, courses, or scholarships? Our academic counselors are available to guide you.</p>
+
+                <div class="contact-details">
+                    <div class="c-item">
+                        <div class="c-icon"><i class="ri-map-pin-2-fill"></i></div>
+                        <div>
+                            <h4>Main Campus Address</h4>
+                            <p>Complex, District Centre, Chandrasekharpur (C.S. Pur), Bhubaneswar - 751016, Odisha, India</p>
+                        </div>
+                    </div>
+
+                    <div class="c-item">
+                        <div class="c-icon"><i class="ri-phone-fill"></i></div>
+                        <div>
+                            <h4>Phone / Hotline</h4>
+                            <p>+91 9777440451 / +91 9777440465<br>+91 9777440460 / +91 9777440464</p>
+                        </div>
+                    </div>
+
+                    <div class="c-item">
+                        <div class="c-icon"><i class="ri-mail-fill"></i></div>
+                        <div>
+                            <h4>Official Email</h4>
+                            <p>gmbd@vidwanclasses.com / info@vidwanclasses.com</p>
+                        </div>
+                    </div>
+
+                    <div class="c-item">
+                        <div class="c-icon"><i class="ri-time-fill"></i></div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday - Sunday: 8:00 AM to 8:00 PM IST</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" class="social-btn"><i class="ri-youtube-fill"></i></a>
+                    <a href="#" class="social-btn"><i class="ri-instagram-line"></i></a>
+                    <a href="https://wa.me/919777440451" target="_blank" class="social-btn"><i class="ri-whatsapp-line"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form-card glass-panel">
+                <h3><i class="ri-message-3-line"></i> Send Us A Direct Message</h3>
+                <form id="contactForm" onsubmit="handleFormSubmit(event, 'Contact Page Form')">
+                    <div class="input-group">
+                        <label for="c_name">Student / Parent Name *</label>
+                        <input type="text" id="c_name" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="c_email">Email Address *</label>
+                            <input type="email" id="c_email" required placeholder="your.email@gmail.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="c_phone">Phone Number *</label>
+                            <input type="tel" id="c_phone" required placeholder="10 digit phone number">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="c_target">Course Interested In</label>
+                        <select id="c_target">
+                            <option value="IIT-JEE Coaching">IIT-JEE Main & Advanced</option>
+                            <option value="NEET Medical">NEET / Medical Entrance</option>
+                            <option value="Pre-Foundation">Pre-Foundation (Class 6th to 10th)</option>
+                            <option value="VST Scholarship Test">VST Scholarship Test</option>
+                            <option value="Franchise Opportunity">Apply For Franchise</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="c_message">Message / Details</label>
+                        <textarea id="c_message" rows="3" placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block glow-btn">
+                        <i class="ri-send-plane-2-fill"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="brand-logo footer-logo" title="Vidwan Classes Official Logo">
+                    <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img footer-logo-img">
+                </a>
+                <p class="footer-about">
+                    Vidwan Classes Pvt. Ltd. is Odisha's premier competitive exam coaching institute dedicated to nurturing future engineers, doctors, and scientists since 2007.
+                </p>
+                <div class="footer-cert">
+                    <i class="ri-shield-star-line"></i> Registered ISO Certified Institute
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Popular Programs</h4>
+                <ul>
+                    <li><a href="course-details.html?id=nurture">Nurture 2-Year Integrated</a></li>
+                    <li><a href="course-details.html?id=qualifier">Qualifier 1-Year Intensive</a></li>
+                    <li><a href="course-details.html?id=target">Target Dropper Batch</a></li>
+                    <li><a href="course-details.html?id=prefoundation">Pre-Foundation Olympiad</a></li>
+                    <li><a href="course-details.html?id=digiconnect">Digi-Connect Online</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Management</a></li>
+                    <li><a href="results.html">Success Stories & Ranks</a></li>
+                    <li><a href="vst.html">VST Scholarship 2026</a></li>
+                    <li><a href="contact.html">Contact & Campuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Exam Alert Newsletter</h4>
+                <p>Subscribe to receive updates on JEE/NEET exam dates, syllabus changes & free study resources.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Vidwan Classes Private Limited. All Rights Reserved. Built with excellence.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919777440451?text=Hello%20Vidwan%20Classes,%20I%20want%20information%20regarding%20campus%20location." target="_blank" class="float-btn whatsapp-btn">
+            <i class="ri-whatsapp-line"></i>
+        </a>
+        <a href="tel:+919777440451" class="float-btn phone-btn">
+            <i class="ri-phone-line"></i>
+        </a>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="applyModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('applyModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-file-text-line"></i> Online Admission Application 2026-27</h3>
+            </div>
+            <form id="modalApplyForm" onsubmit="handleFormSubmit(event, 'Modal Application Form')">
+                <div class="input-group">
+                    <label>Student's Full Name *</label>
+                    <input type="text" required placeholder="Enter student's name">
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Email Address *</label>
+                        <input type="email" required placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <label>Mobile Number *</label>
+                        <input type="tel" required placeholder="10 digit mobile">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">
+                    Submit Application Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="callbackModal">
+        <div class="modal-card glass-panel sm-modal">
+            <button class="modal-close" onclick="closeModal('callbackModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-customer-service-2-line"></i> Request A Counselor Call</h3>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Callback Request')">
+                <div class="input-group">
+                    <label>Your Name *</label>
+                    <input type="text" required placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required placeholder="Mobile Number">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">Request Callback</button>
+            </form>
+        </div>
+    </button>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

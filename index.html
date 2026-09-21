@@ -25,7 +25,7 @@
             <div class="announcement-text">
                 Vidwan Talent Search Test (VST) 2026 Registration is now LIVE! Avail up to <strong>90% Scholarship</strong>.
             </div>
-            <a href="#vst-section" class="announcement-link">Register Now <i class="ri-arrow-right-line"></i></a>
+            <a href="vst.html" class="announcement-link">Register Now <i class="ri-arrow-right-line"></i></a>
         </div>
     </div>
 
@@ -38,11 +38,11 @@
                 <span class="utility-loc"><i class="ri-map-pin-2-fill"></i> District Centre, C.S. Pur, Bhubaneswar</span>
             </div>
             <div class="utility-right">
-                <a href="#about-us">Our Management</a>
+                <a href="about.html">Our Management</a>
                 <span class="dot">•</span>
-                <a href="#vision">Vision & USP</a>
+                <a href="faculty.html">Faculty Team</a>
                 <span class="dot">•</span>
-                <a href="#download-hub">Free Resources</a>
+                <a href="vst.html">Scholarships</a>
                 <span class="dot">•</span>
                 <button class="btn-text-link" id="openCallbackModal"><i class="ri-customer-service-2-line"></i> Request Callback</button>
             </div>
@@ -52,25 +52,26 @@
     <!-- Main Navigation Bar -->
     <nav class="main-navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="brand-logo" title="Vidwan Classes Pvt. Ltd. Official Logo">
+            <a href="index.html" class="brand-logo" title="Vidwan Classes Pvt. Ltd. Official Logo">
                 <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Pvt. Ltd. Official Logo" class="client-original-logo-img">
             </a>
 
             <div class="nav-menu" id="navMenu">
-                <a href="#hero" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link active">Home</a>
                 <div class="nav-dropdown">
-                    <a href="#courses" class="nav-link dropdown-toggle">Courses <i class="ri-chevron-down-s-line"></i></a>
+                    <a href="courses.html" class="nav-link dropdown-toggle">Courses <i class="ri-chevron-down-s-line"></i></a>
                     <div class="dropdown-menu">
-                        <a href="#courses" onclick="filterCourses('jee')"><i class="ri-compass-3-line"></i> IIT-JEE (Main & Adv)</a>
-                        <a href="#courses" onclick="filterCourses('neet')"><i class="ri-heart-pulse-line"></i> NEET (Medical)</a>
-                        <a href="#courses" onclick="filterCourses('foundation')"><i class="ri-honour-line"></i> Pre-Foundation (6th-10th)</a>
-                        <a href="#courses" onclick="filterCourses('digital')"><i class="ri-laptop-line"></i> Digi-Connect Classes</a>
+                        <a href="course-details.html?id=nurture"><i class="ri-compass-3-line"></i> IIT-JEE (Main & Adv)</a>
+                        <a href="course-details.html?id=qualifier"><i class="ri-heart-pulse-line"></i> NEET (Medical)</a>
+                        <a href="course-details.html?id=prefoundation"><i class="ri-honour-line"></i> Pre-Foundation (6th-10th)</a>
+                        <a href="course-details.html?id=digiconnect"><i class="ri-laptop-line"></i> Digi-Connect Classes</a>
                     </div>
                 </div>
-                <a href="#about-us" class="nav-link">About Us</a>
-                <a href="#results" class="nav-link">Our Success</a>
-                <a href="#vst-section" class="nav-link">Scholarship (VST)</a>
-                <a href="#contact" class="nav-link">Contact Us</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="faculty.html" class="nav-link">Faculty</a>
+                <a href="results.html" class="nav-link">Our Success</a>
+                <a href="vst.html" class="nav-link">Scholarship (VST)</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
             </div>
 
             <div class="nav-actions">
@@ -219,7 +220,7 @@
                 </div>
 
                 <div class="hero-buttons">
-                    <a href="#courses" class="btn btn-primary btn-lg">
+                    <a href="courses.html" class="btn btn-primary btn-lg">
                         <i class="ri-book-open-line"></i> Explore Programs
                     </a>
                     <button class="btn btn-secondary btn-lg" id="openDemoBtn">
@@ -367,7 +368,7 @@
                             <li><i class="ri-check-line"></i> Weekly All-India Test Series (AITS)</li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-outline-primary btn-sm" onclick="openSyllabusModal('Nurture Program (Class XI - 2 Year)')">View Details</button>
+                            <a href="course-details.html?id=nurture" class="btn btn-outline-primary btn-sm">View Details</a>
                             <button class="btn btn-primary btn-sm" onclick="openApplyModalFor('NURTURE')">Apply Now</button>
                         </div>
                     </div>
@@ -389,7 +390,7 @@
                             <li><i class="ri-check-line"></i> Digital Smart Study Notes</li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-outline-primary btn-sm" onclick="openSyllabusModal('Digi-Connect Program')">View Details</button>
+                            <a href="course-details.html?id=digiconnect" class="btn btn-outline-primary btn-sm">View Details</a>
                             <button class="btn btn-primary btn-sm" onclick="openApplyModalFor('DIGI-CONNECT')">Apply Now</button>
                         </div>
                     </div>
@@ -411,7 +412,7 @@
                             <li><i class="ri-check-line"></i> Personal Faculty Mentorship</li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-outline-primary btn-sm" onclick="openSyllabusModal('Success Program')">View Details</button>
+                            <a href="course-details.html?id=success" class="btn btn-outline-primary btn-sm">View Details</a>
                             <button class="btn btn-primary btn-sm" onclick="openApplyModalFor('SUCCESS')">Apply Now</button>
                         </div>
                     </div>
@@ -433,7 +434,7 @@
                             <li><i class="ri-check-line"></i> Board Exam Special Revision</li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-outline-primary btn-sm" onclick="openSyllabusModal('Qualifier Program')">View Details</button>
+                            <a href="course-details.html?id=qualifier" class="btn btn-outline-primary btn-sm">View Details</a>
                             <button class="btn btn-primary btn-sm" onclick="openApplyModalFor('QUALIFIER')">Apply Now</button>
                         </div>
                     </div>
@@ -455,7 +456,7 @@
                             <li><i class="ri-check-line"></i> Individual Performance Tracking</li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-outline-primary btn-sm" onclick="openSyllabusModal('Target Program (Droppers)')">View Details</button>
+                            <a href="course-details.html?id=target" class="btn btn-outline-primary btn-sm">View Details</a>
                             <button class="btn btn-primary btn-sm" onclick="openApplyModalFor('TARGET')">Apply Now</button>
                         </div>
                     </div>
@@ -477,7 +478,7 @@
                             <li><i class="ri-check-line"></i> Olympiad Specialized Training</li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-outline-primary btn-sm" onclick="openSyllabusModal('Pre-Foundation Program')">View Details</button>
+                            <a href="course-details.html?id=prefoundation" class="btn btn-outline-primary btn-sm">View Details</a>
                             <button class="btn btn-primary btn-sm" onclick="openApplyModalFor('PRE-FOUNDATION')">Apply Now</button>
                         </div>
                     </div>
@@ -1047,22 +1048,22 @@
             <div class="footer-col">
                 <h4>Popular Programs</h4>
                 <ul>
-                    <li><a href="#courses">Nurture 2-Year Integrated</a></li>
-                    <li><a href="#courses">Qualifier 1-Year Intensive</a></li>
-                    <li><a href="#courses">Target Dropper Batch</a></li>
-                    <li><a href="#courses">Pre-Foundation Olympiad</a></li>
-                    <li><a href="#courses">Digi-Connect Online</a></li>
+                    <li><a href="course-details.html?id=nurture">Nurture 2-Year Integrated</a></li>
+                    <li><a href="course-details.html?id=qualifier">Qualifier 1-Year Intensive</a></li>
+                    <li><a href="course-details.html?id=target">Target Dropper Batch</a></li>
+                    <li><a href="course-details.html?id=prefoundation">Pre-Foundation Olympiad</a></li>
+                    <li><a href="course-details.html?id=digiconnect">Digi-Connect Online</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#about-us">About Management</a></li>
-                    <li><a href="#results">Success Stories & Ranks</a></li>
-                    <li><a href="#vst-section">VST Scholarship 2026</a></li>
-                    <li><a href="#download-hub">Download PYQs & Notes</a></li>
-                    <li><a href="#contact">Apply For Franchise</a></li>
+                    <li><a href="about.html">About Management</a></li>
+                    <li><a href="faculty.html">Faculty & Mentors</a></li>
+                    <li><a href="results.html">Success Stories & Ranks</a></li>
+                    <li><a href="vst.html">VST Scholarship 2026</a></li>
+                    <li><a href="contact.html">Contact & Campuses</a></li>
                 </ul>
             </div>
 

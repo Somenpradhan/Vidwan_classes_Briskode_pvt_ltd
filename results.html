@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall of Fame & Results | Vidwan Classes</title>
+    <meta name="description" content="Vidwan Classes Outstanding Results in JEE Advanced (AIR 286, AIR 694, 73% selection rate), NEET UG, and Olympiads since 2007.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <div class="announcement-tag"><i class="ri-flashlight-fill"></i> ADMISSIONS OPEN 2026-27</div>
+            <div class="announcement-text">
+                Vidwan Talent Search Test (VST) 2026 Registration is now LIVE! Avail up to <strong>90% Scholarship</strong>.
+            </div>
+            <a href="vst.html" class="announcement-link">Register Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+    </div>
+
+    <!-- Header Utility Bar -->
+    <header class="utility-bar">
+        <div class="container utility-container">
+            <div class="utility-left">
+                <a href="tel:+919777440451"><i class="ri-phone-fill"></i> +91-9777440451 / 465</a>
+                <a href="mailto:info@vidwanclasses.com"><i class="ri-mail-fill"></i> info@vidwanclasses.com</a>
+                <span class="utility-loc"><i class="ri-map-pin-2-fill"></i> District Centre, C.S. Pur, Bhubaneswar</span>
+            </div>
+            <div class="utility-right">
+                <a href="about.html">Our Management</a>
+                <span class="dot">•</span>
+                <a href="faculty.html">Faculty Team</a>
+                <span class="dot">•</span>
+                <a href="vst.html">Scholarships</a>
+                <span class="dot">•</span>
+                <button class="btn-text-link" onclick="openModal('callbackModal')"><i class="ri-customer-service-2-line"></i> Request Callback</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" title="Vidwan Classes Official Logo">
+                <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img">
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="courses.html" class="nav-link dropdown-toggle">Courses <i class="ri-chevron-down-s-line"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="course-details.html?id=nurture"><i class="ri-compass-3-line"></i> Nurture (Class XI)</a>
+                        <a href="course-details.html?id=qualifier"><i class="ri-heart-pulse-line"></i> Qualifier (Class XII)</a>
+                        <a href="course-details.html?id=target"><i class="ri-trophy-line"></i> Target (Droppers)</a>
+                        <a href="course-details.html?id=prefoundation"><i class="ri-honour-line"></i> Pre-Foundation</a>
+                        <a href="course-details.html?id=digiconnect"><i class="ri-laptop-line"></i> Digi-Connect Online</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="faculty.html" class="nav-link">Faculty</a>
+                <a href="results.html" class="nav-link active">Our Success</a>
+                <a href="vst.html" class="nav-link">Scholarship (VST)</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="openBrochureBtn">
+                    <i class="ri-file-download-line"></i> Syllabus
+                </button>
+                <button class="btn btn-primary glow-btn" onclick="openModal('applyModal')">
+                    <i class="ri-edit-box-line"></i> Apply Now
+                </button>
+                <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="breadcrumb-trail">
+                <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span>Our Success & Hall of Fame</span>
+            </div>
+            <h1 class="page-banner-title">Hall of <span class="text-gradient">Fame</span></h1>
+            <p class="page-banner-subtitle">Celebrating historical ranks, extraordinary selections, and transformative achievements of Vidwan students.</p>
+        </div>
+    </section>
+
+    <!-- Stat Strip Banner -->
+    <section class="stat-strip" style="margin-bottom: 2rem;">
+        <div class="container stat-grid">
+            <div class="stat-box">
+                <div class="stat-icon"><i class="ri-time-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="17">17+</h3>
+                    <p>Years of Academic Excellence</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="ri-trophy-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="73">73%</h3>
+                    <p>JEE Advanced 2025 Selection Ratio</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="ri-group-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="15000">15,000+</h3>
+                    <p>Alumni in IITs & AIIMS</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="ri-medal-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="50">50+</h3>
+                    <p>Senior IITian & Doctor Faculties</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hall of Fame Grid -->
+    <section class="section-padding results-section" style="padding-top: 1rem;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">— TOP RANK HOLDERS —</span>
+                <h2 class="section-title">Our Stellar <span class="text-gradient">Rankers</span></h2>
+                
+                <div class="filter-tabs">
+                    <button class="result-filter-btn active" data-resfilter="all">All Top Rankers</button>
+                    <button class="result-filter-btn" data-resfilter="jee-adv">JEE Advanced</button>
+                    <button class="result-filter-btn" data-resfilter="neet">NEET (Medical)</button>
+                    <button class="result-filter-btn" data-resfilter="olympiad">Olympiads</button>
+                </div>
+            </div>
+
+            <div class="rankers-grid" id="rankersGrid">
+                <!-- Ranker 1 -->
+                <div class="ranker-card" data-category="jee-adv">
+                    <div class="rank-badge">AIR 286</div>
+                    <div class="ranker-avatar">
+                        <div class="avatar-placeholder">SM</div>
+                    </div>
+                    <div class="ranker-info">
+                        <h4>Saswat Ku. Malla</h4>
+                        <p class="exam">JEE Advanced 2025</p>
+                        <p class="college"><i class="ri-building-line"></i> IIT Kharagpur (CSE)</p>
+                        <p class="quote">"Vidwan's daily doubt clearing sessions and AIR test series were pivotal to my score!"</p>
+                    </div>
+                </div>
+
+                <!-- Ranker 2 -->
+                <div class="ranker-card" data-category="jee-adv">
+                    <div class="rank-badge">AIR 694</div>
+                    <div class="ranker-avatar">
+                        <div class="avatar-placeholder">RR</div>
+                    </div>
+                    <div class="ranker-info">
+                        <h4>Royan Rass</h4>
+                        <p class="exam">JEE Advanced 2025</p>
+                        <p class="college"><i class="ri-building-line"></i> IIT Bhubaneswar (ECE)</p>
+                        <p class="quote">"The 2-year Nurture batch provided absolute clarity in Physics and Chemistry."</p>
+                    </div>
+                </div>
+
+                <!-- Ranker 3 -->
+                <div class="ranker-card" data-category="jee-adv">
+                    <div class="rank-badge">AIR 948</div>
+                    <div class="ranker-avatar">
+                        <div class="avatar-placeholder">AA</div>
+                    </div>
+                    <div class="ranker-info">
+                        <h4>Anjana Akhileswar</h4>
+                        <p class="exam">JEE Advanced 2025</p>
+                        <p class="college"><i class="ri-building-line"></i> IIT Madras</p>
+                        <p class="quote">"Teachers never hesitated to solve my doubts even outside of scheduled class hours."</p>
+                    </div>
+                </div>
+
+                <!-- Ranker 4 -->
+                <div class="ranker-card" data-category="neet">
+                    <div class="rank-badge medical-badge">AIR 142</div>
+                    <div class="ranker-avatar">
+                        <div class="avatar-placeholder">NS</div>
+                    </div>
+                    <div class="ranker-info">
+                        <h4>Naveen Sai</h4>
+                        <p class="exam">NEET UG 2025</p>
+                        <p class="college"><i class="ri-hospital-line"></i> AIIMS New Delhi</p>
+                        <p class="quote">"The NCERT line-by-line Biology drills at Vidwan made NEET Biology effortless."</p>
+                    </div>
+                </div>
+
+                <!-- Ranker 5 -->
+                <div class="ranker-card" data-category="jee-adv">
+                    <div class="rank-badge">AIR 989</div>
+                    <div class="ranker-avatar">
+                        <div class="avatar-placeholder">PS</div>
+                    </div>
+                    <div class="ranker-info">
+                        <h4>Partha Sarathi</h4>
+                        <p class="exam">JEE Advanced 2025</p>
+                        <p class="college"><i class="ri-building-line"></i> IIT Kanpur</p>
+                        <p class="quote">"Vidwan Classes taught me how to approach multi-concept complex questions."</p>
+                    </div>
+                </div>
+
+                <!-- Ranker 6 -->
+                <div class="ranker-card" data-category="olympiad">
+                    <div class="rank-badge gold-badge">GOLD MEDAL</div>
+                    <div class="ranker-avatar">
+                        <div class="avatar-placeholder">M</div>
+                    </div>
+                    <div class="ranker-info">
+                        <h4>Maheswara</h4>
+                        <p class="exam">INMO / RMO Olympiad</p>
+                        <p class="college"><i class="ri-trophy-line"></i> National Mathematics Olympiad</p>
+                        <p class="quote">"Pre-Foundation program built my logical problem-solving foundation early."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding testimonials-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">— TESTIMONIALS —</span>
+                <h2 class="section-title">What <span class="text-gradient">Parents & Students</span> Say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="testimonial-text">"Choosing Vidwan Classes for my son's 2-year JEE preparation was the best decision. The faculty took personal interest in his progress and guided him into IIT Kharagpur."</p>
+                    <div class="user-info">
+                        <div class="user-avatar">PM</div>
+                        <div>
+                            <h4>Pradeep Malla</h4>
+                            <p>Parent of Saswat Malla (AIR 286)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="testimonial-text">"The Digi-Connect online platform felt just like an offline classroom. Daily doubt clarification and live quizzes kept my competitive edge sharp throughout XII."</p>
+                    <div class="user-info">
+                        <div class="user-avatar">SR</div>
+                        <div>
+                            <h4>Suman Routine</h4>
+                            <p>Digi-Connect Student (NEET 685 Marks)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="testimonial-text">"Vidwan's small batch sizes allowed teachers to focus on each student individually. The mock test analysis reports clearly highlighted where I needed improvement."</p>
+                    <div class="user-info">
+                        <div class="user-avatar">AP</div>
+                        <div>
+                            <h4>Ananya Patnaik</h4>
+                            <p>Nurture Batch Student (Class XII State Topper)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="brand-logo footer-logo" title="Vidwan Classes Official Logo">
+                    <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img footer-logo-img">
+                </a>
+                <p class="footer-about">
+                    Vidwan Classes Pvt. Ltd. is Odisha's premier competitive exam coaching institute dedicated to nurturing future engineers, doctors, and scientists since 2007.
+                </p>
+                <div class="footer-cert">
+                    <i class="ri-shield-star-line"></i> Registered ISO Certified Institute
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Popular Programs</h4>
+                <ul>
+                    <li><a href="course-details.html?id=nurture">Nurture 2-Year Integrated</a></li>
+                    <li><a href="course-details.html?id=qualifier">Qualifier 1-Year Intensive</a></li>
+                    <li><a href="course-details.html?id=target">Target Dropper Batch</a></li>
+                    <li><a href="course-details.html?id=prefoundation">Pre-Foundation Olympiad</a></li>
+                    <li><a href="course-details.html?id=digiconnect">Digi-Connect Online</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Management</a></li>
+                    <li><a href="results.html">Success Stories & Ranks</a></li>
+                    <li><a href="vst.html">VST Scholarship 2026</a></li>
+                    <li><a href="contact.html">Contact & Campuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Exam Alert Newsletter</h4>
+                <p>Subscribe to receive updates on JEE/NEET exam dates, syllabus changes & free study resources.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Vidwan Classes Private Limited. All Rights Reserved. Built with excellence.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919777440451?text=Hello%20Vidwan%20Classes,%20I%20want%20information%20regarding%20results." target="_blank" class="float-btn whatsapp-btn">
+            <i class="ri-whatsapp-line"></i>
+        </a>
+        <a href="tel:+919777440451" class="float-btn phone-btn">
+            <i class="ri-phone-line"></i>
+        </a>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="applyModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('applyModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-file-text-line"></i> Online Admission Application 2026-27</h3>
+            </div>
+            <form id="modalApplyForm" onsubmit="handleFormSubmit(event, 'Modal Application Form')">
+                <div class="input-group">
+                    <label>Student's Full Name *</label>
+                    <input type="text" required placeholder="Enter student's name">
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Email Address *</label>
+                        <input type="email" required placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <label>Mobile Number *</label>
+                        <input type="tel" required placeholder="10 digit mobile">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">
+                    Submit Application Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="callbackModal">
+        <div class="modal-card glass-panel sm-modal">
+            <button class="modal-close" onclick="closeModal('callbackModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-customer-service-2-line"></i> Request A Counselor Call</h3>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Callback Request')">
+                <div class="input-group">
+                    <label>Your Name *</label>
+                    <input type="text" required placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required placeholder="Mobile Number">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">Request Callback</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

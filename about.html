@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us & Academic Legacy | Vidwan Classes</title>
+    <meta name="description" content="Learn about Vidwan Classes - Odisha's premier competitive coaching institute since 2007. Led by expert IITian and AIIMS doctor faculty in Bhubaneswar.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <div class="announcement-tag"><i class="ri-flashlight-fill"></i> ADMISSIONS OPEN 2026-27</div>
+            <div class="announcement-text">
+                Vidwan Talent Search Test (VST) 2026 Registration is now LIVE! Avail up to <strong>90% Scholarship</strong>.
+            </div>
+            <a href="vst.html" class="announcement-link">Register Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+    </div>
+
+    <!-- Header Utility Bar -->
+    <header class="utility-bar">
+        <div class="container utility-container">
+            <div class="utility-left">
+                <a href="tel:+919777440451"><i class="ri-phone-fill"></i> +91-9777440451 / 465</a>
+                <a href="mailto:info@vidwanclasses.com"><i class="ri-mail-fill"></i> info@vidwanclasses.com</a>
+                <span class="utility-loc"><i class="ri-map-pin-2-fill"></i> District Centre, C.S. Pur, Bhubaneswar</span>
+            </div>
+            <div class="utility-right">
+                <a href="about.html" class="active">Our Management</a>
+                <span class="dot">•</span>
+                <a href="faculty.html">Faculty Team</a>
+                <span class="dot">•</span>
+                <a href="vst.html">Scholarships</a>
+                <span class="dot">•</span>
+                <button class="btn-text-link" onclick="openModal('callbackModal')"><i class="ri-customer-service-2-line"></i> Request Callback</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" title="Vidwan Classes Official Logo">
+                <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img">
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="courses.html" class="nav-link dropdown-toggle">Courses <i class="ri-chevron-down-s-line"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="course-details.html?id=nurture"><i class="ri-compass-3-line"></i> Nurture (Class XI)</a>
+                        <a href="course-details.html?id=qualifier"><i class="ri-heart-pulse-line"></i> Qualifier (Class XII)</a>
+                        <a href="course-details.html?id=target"><i class="ri-trophy-line"></i> Target (Droppers)</a>
+                        <a href="course-details.html?id=prefoundation"><i class="ri-honour-line"></i> Pre-Foundation</a>
+                        <a href="course-details.html?id=digiconnect"><i class="ri-laptop-line"></i> Digi-Connect Online</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link active">About Us</a>
+                <a href="faculty.html" class="nav-link">Faculty</a>
+                <a href="results.html" class="nav-link">Our Success</a>
+                <a href="vst.html" class="nav-link">Scholarship (VST)</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="openBrochureBtn">
+                    <i class="ri-file-download-line"></i> Syllabus
+                </button>
+                <button class="btn btn-primary glow-btn" onclick="openModal('applyModal')">
+                    <i class="ri-edit-box-line"></i> Apply Now
+                </button>
+                <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="breadcrumb-trail">
+                <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span>About Us</span>
+            </div>
+            <h1 class="page-banner-title">About <span class="text-gradient">Vidwan Classes</span></h1>
+            <p class="page-banner-subtitle">Pioneering competitive exam coaching in Odisha & Eastern India since 2007 with immortal commitment to student success.</p>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="section-padding about-section" style="padding-top: 1rem;">
+        <div class="container about-grid">
+            <div class="about-image-column">
+                <div class="campus-card">
+                    <img src="assets/campus.png" alt="Vidwan Classes Campus">
+                    <div class="experience-badge">
+                        <span class="years">17+</span>
+                        <span class="text">Years of Legacy in Odisha</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content-column">
+                <span class="sub-heading">— OUR JOURNEY —</span>
+                <h2 class="section-title">We are a <span class="text-gradient">Genius Course</span> @ work since 2007</h2>
+                
+                <p class="lead-text">
+                    Vidwan Classes is the leading coaching institute of Odisha & Eastern India for IIT/JEE, NEET/Medical, KVPY, NTSE and all National & International level Olympiads.
+                </p>
+                
+                <p class="body-text">
+                    Vidwan Classes marked the humble beginning of an exciting odyssey in 2007 bearing the vision of sculpting the world of education with immortal nerve and commitment to excellence. We were the pioneers in Classroom Coaching in Odisha for IIT-JEE and have achieved phenomenal success year after year.
+                </p>
+                <p class="body-text" style="margin-top: 1rem;">
+                    Over the past 17+ years, more than 15,000 Vidwan alumni have entered premier institutions including top IITs (Kharagpur, Bombay, Madras, Kanpur, Delhi, Bhubaneswar), AIIMS New Delhi, SCB Medical, NITs, and top central universities.
+                </p>
+
+                <div class="usps-grid" style="margin-top: 2rem;">
+                    <div class="usp-box">
+                        <i class="ri-user-follow-line"></i>
+                        <div>
+                            <h4>100% IITian & Doctor Mentors</h4>
+                            <p>Direct guidance from top rank holders & experienced senior faculties.</p>
+                        </div>
+                    </div>
+                    <div class="usp-box">
+                        <i class="ri-folders-line"></i>
+                        <div>
+                            <h4>Curated Study Modules</h4>
+                            <p>Research-based problem sets & comprehensive solution books.</p>
+                        </div>
+                    </div>
+                    <div class="usp-box">
+                        <i class="ri-pie-chart-2-line"></i>
+                        <div>
+                            <h4>Performance Analytics</h4>
+                            <p>AI-driven test reports to pinpoint weaknesses and improve accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="usp-box">
+                        <i class="ri-parent-line"></i>
+                        <div>
+                            <h4>Regular Parent Meetings</h4>
+                            <p>Transparent progress feedback and dedicated parent counselor support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision, Mission & Values -->
+    <section class="section-padding" style="background: rgba(255,255,255,0.02); border-y: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">— OUR CORE GUIDING PHILOSOPHY —</span>
+                <h2 class="section-title">Vision, Mission & <span class="text-gradient">Core Values</span></h2>
+            </div>
+
+            <div class="courses-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="glass-panel" style="padding: 2rem; border-top: 3px solid var(--gold);">
+                    <i class="ri-eye-line" style="font-size: 2.5rem; color: var(--gold);"></i>
+                    <h3 style="color: #FFF; font-size: 1.4rem; margin: 1rem 0 0.5rem;">Our Vision</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">To empower every passionate student with world-class competitive exam guidance, bridging the gap between ambition and top national ranks through uncompromised academic ethics.</p>
+                </div>
+
+                <div class="glass-panel" style="padding: 2rem; border-top: 3px solid var(--cyan-glow);">
+                    <i class="ri-compass-3-line" style="font-size: 2.5rem; color: var(--cyan-glow);"></i>
+                    <h3 style="color: #FFF; font-size: 1.4rem; margin: 1rem 0 0.5rem;">Our Mission</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">To maintain small batch sizes, offer daily individual doubt desks, provide rigorous test series analytics, and ensure 100% coverage of fundamentals to advanced rank level questions.</p>
+                </div>
+
+                <div class="glass-panel" style="padding: 2rem; border-top: 3px solid var(--emerald);">
+                    <i class="ri-shield-star-line" style="font-size: 2.5rem; color: var(--emerald);"></i>
+                    <h3 style="color: #FFF; font-size: 1.4rem; margin: 1rem 0 0.5rem;">Our Core Values</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">Academic integrity, continuous innovation in pedagogy, student-centric mentorship, zero-compromise quality, and nurturing holistic analytical thinking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="brand-logo footer-logo" title="Vidwan Classes Official Logo">
+                    <img src="assets/vidwan_logo_horizontal_hd.png" alt="Vidwan Classes Official Logo" class="client-original-logo-img footer-logo-img">
+                </a>
+                <p class="footer-about">
+                    Vidwan Classes Pvt. Ltd. is Odisha's premier competitive exam coaching institute dedicated to nurturing future engineers, doctors, and scientists since 2007.
+                </p>
+                <div class="footer-cert">
+                    <i class="ri-shield-star-line"></i> Registered ISO Certified Institute
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Popular Programs</h4>
+                <ul>
+                    <li><a href="course-details.html?id=nurture">Nurture 2-Year Integrated</a></li>
+                    <li><a href="course-details.html?id=qualifier">Qualifier 1-Year Intensive</a></li>
+                    <li><a href="course-details.html?id=target">Target Dropper Batch</a></li>
+                    <li><a href="course-details.html?id=prefoundation">Pre-Foundation Olympiad</a></li>
+                    <li><a href="course-details.html?id=digiconnect">Digi-Connect Online</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Management</a></li>
+                    <li><a href="results.html">Success Stories & Ranks</a></li>
+                    <li><a href="vst.html">VST Scholarship 2026</a></li>
+                    <li><a href="contact.html">Contact & Campuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Exam Alert Newsletter</h4>
+                <p>Subscribe to receive updates on JEE/NEET exam dates, syllabus changes & free study resources.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Vidwan Classes Private Limited. All Rights Reserved. Built with excellence.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919777440451?text=Hello%20Vidwan%20Classes,%20I%20want%20information%20regarding%20the%20institute." target="_blank" class="float-btn whatsapp-btn">
+            <i class="ri-whatsapp-line"></i>
+        </a>
+        <a href="tel:+919777440451" class="float-btn phone-btn">
+            <i class="ri-phone-line"></i>
+        </a>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="applyModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('applyModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-file-text-line"></i> Online Admission Application 2026-27</h3>
+            </div>
+            <form id="modalApplyForm" onsubmit="handleFormSubmit(event, 'Modal Application Form')">
+                <div class="input-group">
+                    <label>Student's Full Name *</label>
+                    <input type="text" required placeholder="Enter student's name">
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Email Address *</label>
+                        <input type="email" required placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <label>Mobile Number *</label>
+                        <input type="tel" required placeholder="10 digit mobile">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">
+                    Submit Application Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="callbackModal">
+        <div class="modal-card glass-panel sm-modal">
+            <button class="modal-close" onclick="closeModal('callbackModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3><i class="ri-customer-service-2-line"></i> Request A Counselor Call</h3>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Callback Request')">
+                <div class="input-group">
+                    <label>Your Name *</label>
+                    <input type="text" required placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required placeholder="Mobile Number">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block glow-btn">Request Callback</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
