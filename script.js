@@ -913,4 +913,69 @@ function scrollStudentCarousel(direction) {
     track.style.transform = `translateX(-${studentCarouselPosition}px)`;
 }
 
+/* 14. Book Album Flipbook Gallery Engine */
+let currentBookPage = 0;
+
+function updateBookPage(index) {
+    const pages = document.querySelectorAll('.book-page');
+    const thumbs = document.querySelectorAll('.book-thumb-item');
+    const counterEl = document.getElementById('bookPageCounter');
+
+    if (pages.length === 0) return;
+
+    currentBookPage = (index + pages.length) % pages.length;
+
+    pages.forEach((page, i) => {
+        if (i === currentBookPage) {
+            page.classList.add('active');
+        } else {
+            page.classList.remove('active');
+        }
+    });
+
+    thumbs.forEach((thumb, i) => {
+        if (i === currentBookPage) {
+            thumb.classList.add('active');
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
+
+    if (counterEl) {
+        counterEl.textContent = `Page ${currentBookPage + 1} of ${pages.length}`;
+    }
+}
+
+function nextBookPage() {
+    updateBookPage(currentBookPage + 1);
+}
+
+function prevBookPage() {
+    updateBookPage(currentBookPage - 1);
+}
+
+function goToBookPage(index) {
+    updateBookPage(index);
+}
+
+function switchExperienceView(viewType) {
+    const bookStage = document.getElementById('bookAlbumStage');
+    const gridStage = document.getElementById('experienceGrid');
+    const btnBook = document.getElementById('viewBtnBook');
+    const btnGrid = document.getElementById('viewBtnGrid');
+
+    if (viewType === 'book') {
+        if (bookStage) bookStage.style.display = 'block';
+        if (gridStage) gridStage.style.display = 'none';
+        if (btnBook) btnBook.classList.add('active');
+        if (btnGrid) btnGrid.classList.remove('active');
+    } else {
+        if (bookStage) bookStage.style.display = 'none';
+        if (gridStage) gridStage.style.display = 'grid';
+        if (btnBook) btnBook.classList.remove('active');
+        if (btnGrid) btnGrid.classList.add('active');
+    }
+}
+
+
 
