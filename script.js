@@ -463,6 +463,32 @@ async function handleFormSubmit(e, formName) {
     const data = {};
     formData.forEach((value, key) => { data[key] = value; });
 
+    // Robust fallback field extraction if name attributes are missing in static HTML forms
+    if (!data.name) {
+        const nameInput = form.querySelector('input[name="name"], input[name="student_name"], #c_name, input[placeholder*="Name" i], input[type="text"]');
+        if (nameInput && nameInput.value) data.name = nameInput.value.trim();
+    }
+    if (!data.email) {
+        const emailInput = form.querySelector('input[name="email"], #c_email, input[type="email"]');
+        if (emailInput && emailInput.value) data.email = emailInput.value.trim();
+    }
+    if (!data.phone) {
+        const phoneInput = form.querySelector('input[name="phone"], #c_phone, input[type="tel"]');
+        if (phoneInput && phoneInput.value) data.phone = phoneInput.value.trim();
+    }
+    if (!data.course) {
+        const courseSelect = form.querySelector('select[name="course"], #c_target, #modalSelectedCourse, select');
+        if (courseSelect && courseSelect.value) data.course = courseSelect.value;
+    }
+    if (!data.message) {
+        const msgInput = form.querySelector('textarea[name="message"], #c_message, textarea');
+        if (msgInput && msgInput.value) data.message = msgInput.value.trim();
+    }
+    if (!data.parent_name) {
+        const parentInput = form.querySelector('input[name="parent_name"], input[placeholder*="Guardian" i]');
+        if (parentInput && parentInput.value) data.parent_name = parentInput.value.trim();
+    }
+
     data.source = formName || "Website Form";
     if (!data.name && data.student_name) data.name = data.student_name;
     if (!data.enquiry_type) {
