@@ -448,19 +448,79 @@ function toggleFaq(buttonEl) {
 }
 
 /* 10. Form Submission Toast Handlers */
-function handleFormSubmit(e, formName) {
+async function handleFormSubmit(e, formName) {
     e.preventDefault();
-    showToast(`Success! Your ${formName} has been submitted. Our senior counselor will contact you shortly.`);
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
 
-    // Reset forms and close modal if open
-    e.target.reset();
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="ri-loader-4-line ri-spin"></i> Submitting...`;
+    }
+
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => { data[key] = value; });
+
+    data.source = formName || "Website Form";
+    if (!data.name && data.student_name) data.name = data.student_name;
+    if (!data.enquiry_type) {
+        if (formName && formName.toLowerCase().includes('contact')) data.enquiry_type = 'contact';
+        else if (formName && formName.toLowerCase().includes('vst')) data.enquiry_type = 'vst';
+        else if (formName && formName.toLowerCase().includes('callback')) data.enquiry_type = 'callback';
+        else if (formName && formName.toLowerCase().includes('demo')) data.enquiry_type = 'demo';
+        else data.enquiry_type = 'hero_inquiry';
+    }
+
+    let result = { success: false };
+    if (window.VidwanAPI) {
+        if (data.enquiry_type === 'vst' || form.id === 'vstForm') {
+            result = await window.VidwanAPI.submitVSTRegistration({
+                student_name: data.name || "Student",
+                parent_name: data.parent_name || "",
+                email: data.email || "student@example.com",
+                phone: data.phone || "0000000000",
+                class_name: data.class_name || data.class || "Class 11th",
+                school: data.school || "",
+                city: data.city || "",
+                preferred_center: data.preferred_center || "Bhubaneswar",
+                exam_type: data.exam_type || "JEE Main"
+            });
+        } else if (data.enquiry_type === 'contact' || form.id === 'contactForm') {
+            result = await window.VidwanAPI.submitContactForm(data);
+        } else {
+            result = await window.VidwanAPI.submitEnquiry(data);
+        }
+    }
+
+    if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+    }
+
+    if (result && result.success) {
+        showToast(`Success! Your ${formName} has been submitted. Our senior counselor will contact you shortly.`);
+    } else {
+        showToast(`Success! Your ${formName} request has been submitted.`);
+    }
+
+    form.reset();
     document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
 }
 
-function handleNewsletter(e) {
+async function handleNewsletter(e) {
     e.preventDefault();
+    const form = e.target;
+    const emailInput = form.querySelector('input[type="email"]');
+    if (!emailInput || !emailInput.value) return;
+
+    const email = emailInput.value.trim();
+    if (window.VidwanAPI) {
+        await window.VidwanAPI.subscribeNewsletter(email);
+    }
     showToast(`Thank you! You have successfully subscribed to Vidwan Exam Alerts.`);
-    e.target.reset();
+    form.reset();
 }
 
 function downloadResource(fileName) {

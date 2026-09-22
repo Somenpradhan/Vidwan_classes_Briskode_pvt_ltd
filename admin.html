@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidwan Classes — Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .admin-layout { display: flex; min-height: 100vh; background: var(--bg-dark, #071224); color: #fff; }
+        .admin-sidebar { width: 260px; background: rgba(11, 31, 58, 0.95); border-right: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+        .admin-main { flex: 1; padding: 2rem; overflow-y: auto; }
+        .admin-card { background: rgba(15, 38, 70, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
+        .stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1.25rem; }
+        .stat-val { font-size: 2rem; font-weight: 700; color: #d97706; margin-top: 0.5rem; }
+        .login-box { max-width: 420px; margin: 80px auto; background: rgba(11, 31, 58, 0.9); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2.5rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.9rem; }
+        th { color: #d97706; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px; }
+        .badge-status { padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .status-new { background: rgba(220, 38, 38, 0.2); color: #f87171; border: 1px solid rgba(220,38,38,0.4); }
+        .status-contacted { background: rgba(217, 119, 6, 0.2); color: #fbbf24; border: 1px solid rgba(217,119,6,0.4); }
+        .status-closed { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4); }
+    </style>
+</head>
+<body>
+
+    <div id="loginScreen" class="login-box">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            <h2 style="color: #fff;"><i class="ri-shield-user-fill" style="color: #d97706;"></i> Admin Portal</h2>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Vidwan Classes Management System</p>
+        </div>
+        <form id="adminLoginForm">
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1;">Admin Email</label>
+                <input type="email" id="adminEmail" class="form-control" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px;" required value="admin@vidwanclasses.com">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1;">Password</label>
+                <input type="password" id="adminPassword" class="form-control" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px;" required value="Admin@12345">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; background: #d97706; border: none; padding: 12px; font-weight: bold;">Log In to Dashboard</button>
+            <div id="loginError" style="color: #ef4444; margin-top: 1rem; display: none; font-size: 0.85rem; text-align: center;"></div>
+        </form>
+    </div>
+
+    <div id="dashboardApp" class="admin-layout" style="display: none;">
+        <aside class="admin-sidebar">
+            <div>
+                <div style="font-size: 1.25rem; font-weight: bold; color: #d97706; margin-bottom: 2rem;">
+                    <i class="ri-graduation-cap-fill"></i> Vidwan Admin
+                </div>
+                <nav style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <a href="#" class="btn btn-outline" style="text-align: left; border-color: rgba(255,255,255,0.15); color: #fff;"><i class="ri-dashboard-line"></i> Dashboard</a>
+                    <a href="index.html" target="_blank" class="btn btn-outline" style="text-align: left; border-color: rgba(255,255,255,0.15); color: #94a3b8;"><i class="ri-external-link-line"></i> View Main Site</a>
+                </nav>
+            </div>
+            <div>
+                <button onclick="logoutAdmin()" class="btn btn-outline" style="width: 100%; border-color: #ef4444; color: #ef4444;">
+                    <i class="ri-logout-box-r-line"></i> Log Out
+                </button>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <div>
+                    <h2>Overview & Enquiries</h2>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Real-time website leads and content management</p>
+                </div>
+                <div>
+                    <button onclick="loadDashboardData()" class="btn btn-primary" style="background: #2563eb; border: none;"><i class="ri-refresh-line"></i> Refresh Data</button>
+                </div>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div style="color: #94a3b8; font-size: 0.85rem;">Total Enquiries</div>
+                    <div id="statTotalEnquiries" class="stat-val">0</div>
+                </div>
+                <div class="stat-card">
+                    <div style="color: #94a3b8; font-size: 0.85rem;">New Leads</div>
+                    <div id="statNewEnquiries" class="stat-val" style="color: #ef4444;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div style="color: #94a3b8; font-size: 0.85rem;">VST Registrations</div>
+                    <div id="statVST" class="stat-val" style="color: #3b82f6;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div style="color: #94a3b8; font-size: 0.85rem;">Newsletter Subs</div>
+                    <div id="statSubs" class="stat-val" style="color: #10b981;">0</div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3><i class="ri-inbox-archive-line" style="color: #d97706;"></i> Student Enquiries</h3>
+                    <select id="statusFilterSelect" onchange="loadEnquiries()" style="background: #0f2646; border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 6px 12px; border-radius: 6px;">
+                        <option value="">All Statuses</option>
+                        <option value="new">New</option>
+                        <option value="contacted">Contacted</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+                
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Type / Source</th>
+                                <th>Course</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="enquiriesTableBody">
+                            <tr><td colspan="8" style="text-align: center; color: #94a3b8;">Loading enquiries...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        let adminToken = localStorage.getItem('vidwan_admin_token');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (adminToken) {
+                showDashboard();
+            }
+
+            document.getElementById('adminLoginForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('adminEmail').value.trim();
+                const password = document.getElementById('adminPassword').value;
+                const errDiv = document.getElementById('loginError');
+
+                errDiv.style.display = 'none';
+
+                const res = await window.VidwanAPI.adminLogin(email, password);
+                if (res.success && res.data.access_token) {
+                    adminToken = res.data.access_token;
+                    localStorage.setItem('vidwan_admin_token', adminToken);
+                    showDashboard();
+                } else {
+                    errDiv.innerText = res.error || "Invalid credentials";
+                    errDiv.style.display = 'block';
+                }
+            });
+        });
+
+        function showDashboard() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('dashboardApp').style.display = 'flex';
+            loadDashboardData();
+        }
+
+        function logoutAdmin() {
+            localStorage.removeItem('vidwan_admin_token');
+            adminToken = null;
+            document.getElementById('dashboardApp').style.display = 'none';
+            document.getElementById('loginScreen').style.display = 'block';
+        }
+
+        async function loadDashboardData() {
+            if (!adminToken) return;
+
+            const statsRes = await window.VidwanAPI.getAdminStats(adminToken);
+            if (statsRes.success) {
+                const s = statsRes.data;
+                document.getElementById('statTotalEnquiries').innerText = s.total_enquiries || 0;
+                document.getElementById('statNewEnquiries').innerText = s.new_enquiries || 0;
+                document.getElementById('statVST').innerText = s.vst_registrations || 0;
+                document.getElementById('statSubs').innerText = s.newsletter_subscribers || 0;
+            }
+
+            loadEnquiries();
+        }
+
+        async function loadEnquiries() {
+            const statusFilter = document.getElementById('statusFilterSelect').value;
+            const res = await window.VidwanAPI.getAdminEnquiries(adminToken, statusFilter);
+            const tbody = document.getElementById('enquiriesTableBody');
+
+            if (res.success && Array.isArray(res.data) && res.data.length > 0) {
+                tbody.innerHTML = res.data.map(item => `
+                    <tr>
+                        <td>#${item.id}</td>
+                        <td><strong>${item.name}</strong></td>
+                        <td>${item.phone}</td>
+                        <td>${item.email || 'N/A'}</td>
+                        <td><span style="font-size: 0.8rem; color: #94a3b8;">${item.enquiry_type}</span></td>
+                        <td>${item.course || 'General'}</td>
+                        <td><span class="badge-status status-${item.status}">${item.status}</span></td>
+                        <td>
+                            ${item.status === 'new' ? `<button onclick="updateStatus(${item.id}, 'contacted')" style="background:#d97706; border:none; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.75rem; cursor:pointer;">Mark Contacted</button>` : ''}
+                            ${item.status === 'contacted' ? `<button onclick="updateStatus(${item.id}, 'closed')" style="background:#10b981; border:none; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.75rem; cursor:pointer;">Close</button>` : ''}
+                        </td>
+                    </tr>
+                `).join('');
+            } else {
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #94a3b8;">No enquiries found.</td></tr>`;
+            }
+        }
+
+        async function updateStatus(id, newStatus) {
+            const res = await window.VidwanAPI.updateEnquiryStatus(adminToken, id, newStatus);
+            if (res.success) {
+                loadDashboardData();
+            }
+        }
+    </script>
+</body>
+</html>
