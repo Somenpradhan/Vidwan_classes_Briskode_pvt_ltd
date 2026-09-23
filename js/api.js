@@ -3,7 +3,7 @@
  * Handles API requests to FastAPI backend with automatic loading indicators and graceful fallback.
  */
 
-const API_BASE_URL = window.VIDWAN_API_URL || "http://localhost:8000/api/v1";
+const API_BASE_URL = window.VIDWAN_API_URL || (window.location.hostname === '127.0.0.1' ? "http://127.0.0.1:8000/api/v1" : "http://localhost:8000/api/v1");
 
 const VidwanAPI = {
     baseUrl: API_BASE_URL,

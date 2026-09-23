@@ -14,10 +14,15 @@ ENV/
 env/
 
 # Backend Local Files & Databases
+Backend/.env
 backend/.env
+Backend/vidwan.db
 backend/vidwan.db
+Backend/test.db
 backend/test.db
+Backend/uploads/*
 backend/uploads/*
+!Backend/uploads/.gitkeep
 !backend/uploads/.gitkeep
 
 # IDE / OS
